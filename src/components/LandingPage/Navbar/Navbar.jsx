@@ -51,9 +51,9 @@ const Navbar = () => {
         <div
           className={`flex justify-between backdrop-blur-[3rem] h-full relative ${
             isScrollDown
-              ? " w-[100%] px-16 py-8"
-              : "w-[90%] px-10 py-8 rounded-[1rem] mt-5"
-          } shadow-2xl shadow-[rgba(235,0,220,0.2)]  bg-[rgba(250,200,290,0.15)] delay-100  mx-auto transition-all duration-1000 ease-in-out `}
+              ? " w-[100%] px-16 py-8 shadow-2xl shadow-[rgba(235,0,220,0.15)] bg-[rgba(255,200,255,0.1)] "
+              : "w-[90%] px-10 py-8 rounded-[2rem] mt-5 bg-[rgba(255,200,255,0.03)]"
+          }  delay-100  mx-auto  transition-all duration-1000 ease-in-out `}
         >
           {/* BG */}
           <div className="bg-purple-600 h-24 w-24 absolute rounded-full left-[-5rem] top-[-4rem] scale-[1.5] blur-[4rem]"></div>
@@ -69,7 +69,7 @@ const Navbar = () => {
               className="h-14 w-14"
               alt=""
             />
-            <i className="max-md:hidden text-4xl">YASFIK</i>
+            <i className="max-md:hidden text-4xl">YSFIK</i>
           </span>
 
           <div className="max-md:hidden z-[2] flex items-center justify-center font-semibold gap-10 ml-34">
