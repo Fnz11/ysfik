@@ -26,16 +26,15 @@
 
 @keyframes floatAnimation {
   0% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
   50% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   100% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
-
 
 @keyframes blink {
   0% {
@@ -49,8 +48,30 @@
   }
 }
 
+@keyframes fire {
+  0% {
+    translatey: 1;
+    translatex: 1;
+    opacity: 0.6;
+  }
+  50% {
+    translatey: 0.8;
+    translatex: 0.8;
+    opacity: 0.4;
+  }
+  100% {
+    translatey: 1.2;
+    translatex: 1.2;
+    opacity: 0.6;
+  }
+}
+
 .blinking-element {
   animation: blink 5s ease-in-out infinite;
+}
+
+.fire-element {
+  animation: fire 2s ease-in-out infinite;
 }
 
 @keyframes blink-shine {
