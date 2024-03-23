@@ -6,22 +6,25 @@ const Quotes = () => {
   return (
     <>
       <section className="min-h-screen w-full md:my-[5rem]  flex items-center justify-center">
-        <div className="w-screen h-[80vh] bg-white flex relative">
-          <Image
-            width={500}
-            height={500}
-            src="/QuoteBG.png"
-            className="w-full absolute top-0 scale-y-[0.8] blur-[15rem] h-[80vh] object-cover"
-            alt=""
-          />
-          <Image
-            width={500}
-            height={500}
-            src="/QuoteBG.png"
-            className="w-full absolute -bottom-20 opacity-[0.5] blur-[4rem] h-[80vh] object-cover"
-            alt=""
-          />
-          <div className="w-full h-full relative flex overflow-hidden group">
+        <div className="w-screen h-[80vh] bg-white group flex relative">
+          <div className="scale-[0.9] opacity-[0.8] group-hover:opacity-[1] group-hover:scale-[0.95] transition-all duration-700 ease-in-out h-full w-full absolute">
+            <Image
+              width={500}
+              height={500}
+              src="/QuoteBG.png"
+              className="w-full absolute top-0 scale-y-[0.8] opacity-[0.8] blur-[15rem] h-[80vh] object-cover"
+              alt=""
+            />
+            <Image
+              width={500}
+              height={500}
+              src="/QuoteBG.png"
+              className="w-full absolute -bottom-20 opacity-[0.5] blur-[5rem] h-[80vh] object-cover"
+              alt=""
+            />
+          </div>
+
+          <div className="w-full h-full relative flex overflow-hidden ">
             <Image
               width={500}
               height={500}
