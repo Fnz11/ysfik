@@ -36,6 +36,39 @@
   }
 }
 
+
+@keyframes blink {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.blinking-element {
+  animation: blink 5s ease-in-out infinite;
+}
+
+@keyframes blink-shine {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.blinking-shine-element {
+  animation: blink-shine 3s ease-in-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: "Mulish", sans-serif;

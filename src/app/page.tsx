@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Navbar from "../components/LandingPage/Navbar/Navbar";
 import Header from "../components/LandingPage/Header";
-import Features from "../components/LandingPage/Features";
+import Features from "../components/LandingPage/Features/Features";
 import Quotes from "../components/LandingPage/Quotes";
 import Footer from "../components/LandingPage/Footer";
+import TechStack from "../components/LandingPage/TechStack/TechStack";
 export default function Home() {
   return (
     <>
@@ -20,14 +21,12 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="bg-[#060606] overflow-hiddenw-screen flex flex-col items-center justify-center text-white text-base md:text-lg relative pt-20">
-        <div className="bg-purple-600 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[1] top-10 blur-[8rem] mr-52 scale-[1.5]"></div>
-        <div className="bg-pink-600 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[1] top-96 left-0 blur-[20rem] mr-52 scale-[1.5]"></div>
-        <div className="bg-green-800 h-[12rem] absolute w-[22rem] aspect-square rounded-full z-[1] top-96 blur-[10rem] scale-[1.3]"></div>
-
+      <div className="bg-[#060606] overflow-hiddenw-screen flex flex-col items-center justify-center text-white text-base md:text-lg relative pt-20 overflow-x-hidden">
         <Navbar />
 
         <Header />
+
+        <TechStack />
 
         <Features />
 
