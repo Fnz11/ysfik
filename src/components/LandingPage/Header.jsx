@@ -14,7 +14,7 @@ const Header = () => {
         <div className="absolute -skew-x-[2deg] skew-y-[10deg] top-[60vh] right-[10vw]">
           <div className="w-[10rem] h-[10rem] p-[0.1rem] bg-gradient-to-br from-pink-500 via-transparent  to-indigo-600 rounded-2xl  floating-element relative ">
             <div className="w-full h-full bg-gradient-to-br from-pink-500 via-transparent  to-indigo-600 rounded-2xl absolute z-[0] opacity-[0.8] blur-[3rem]"></div>
-            <div className="flex h-full w-full rounded-2xl z-[2] relative items-center justify-center text-center text-[6rem] pb-3 font-[600] bg-gradient-to-br from-black via-gray-900 via-[60%] to-black">
+            <div className="flex h-full w-full rounded-2xl z-[2] relative items-center justify-center text-center text-[6rem] pb-3 font-[600] bg-gradient-to-br from-[rgba(0,0,0,0.8)] via-gray-900 via-[60%] to-[rgba(0,0,0,0.8)]">
               <h1>{">_"}</h1>
             </div>
           </div>
@@ -42,7 +42,8 @@ const Header = () => {
         {/* LIGHT */}
         <div className="bg-pink-400 h-[20rem] blinking-element absolute w-[12rem] aspect-square rounded-full z-[0] -right-32 top-[12rem] blur-[8rem] mr-52 opacity-[0.2] scale-[1.2]"></div>
         <div className="bg-blue-600 h-[20rem] blinking-element absolute w-[12rem] aspect-square rounded-full z-[0] -left-32 top-[5rem] blur-[6rem] mr-52 opacity-[0.2] scale-[1.5]"></div>
-        <div className="bg-indigo-600 h-[20rem] absolute w-[12rem] aspect-square rounded-full z-[0] top-[5rem] blur-[6rem] opacity-[0.2] scale-[1.5]"></div>
+        <div className="bg-indigo-500 h-[20rem] absolute w-[12rem] aspect-square rounded-full z-[0] top-[-5rem] blur-[6rem] mr-[20rem] opacity-[0.35] scale-[2]"></div>
+        <div className="bg-purple-500 h-[20rem] absolute w-[12rem] aspect-square rounded-full z-[0] top-[-5rem] blur-[6rem] ml-[25rem] opacity-[0.2] scale-[1.7]"></div>
 
         {/* CONTENT */}
         <div className="z-[3] flex flex-col items-center justify-center mb-32">
