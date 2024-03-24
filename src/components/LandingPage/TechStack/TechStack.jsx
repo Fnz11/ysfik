@@ -17,11 +17,11 @@ const TechStack = () => {
       <div className=" min-h-[100vh] mt-[5rem] w-screen">
         <div className="flex items-center justify-center w-full relative opacity-[0.6] scale-y-[0.5]">
           {/* LIGHT */}
-          <div className="bg-pink-500 h-[20rem] opacity-[0.7] absolute w-[12rem] aspect-square rounded-full -right-32 top-[12rem] blur-[8rem] mr-52 scale-[2] z-[11]"></div>
-          <div className="bg-purple-500 h-[20rem] opacity-[0.4] absolute w-[12rem] aspect-square rounded-full -left-[10rem] top-[20rem] blur-[4rem] mr-52 scale-[4] z-[11]"></div>
-          <div className="bg-emerald-500 h-[20rem] opacity-[0.7] absolute w-[12rem] aspect-square rounded-full top-[80rem] blur-[8rem] mr-52 scale-[2.8] z-[11]"></div>
-          <div className="bg-sky-500 h-[20rem] opacity-[0.8] absolute w-[12rem] aspect-square rounded-full top-[10rem] blur-[8rem] mr-52 scale-[2.8] z-[11]"></div>
-          <div className="bg-indigo-500 h-[20rem] opacity-[0.7] absolute w-[12rem] aspect-square rounded-full -right-[10rem] top-[80rem] blur-[8rem] mr-52 scale-[2.8] z-[11]"></div>
+          <div className="bg-pink-500 h-[20rem] opacity-[0.3] absolute w-[12rem] aspect-square rounded-full -right-32 top-[12rem] blur-[8rem] mr-52 scale-[2] z-[11]"></div>
+          <div className="bg-purple-500 h-[20rem] opacity-[0.2] absolute w-[12rem] aspect-square rounded-full -left-[10rem] top-[20rem] blur-[4rem] mr-52 scale-[4] z-[11]"></div>
+          <div className="bg-emerald-500 h-[20rem] opacity-[0.4] absolute w-[12rem] aspect-square rounded-full top-[80rem] blur-[8rem] mr-52 scale-[2.8] z-[11]"></div>
+          <div className="bg-sky-500 h-[20rem] opacity-[0.3] absolute w-[12rem] aspect-square rounded-full top-[10rem] blur-[8rem] mr-52 scale-[2.8] z-[11]"></div>
+          <div className="bg-indigo-500 h-[20rem] opacity-[0.3] absolute w-[12rem] aspect-square rounded-full -right-[10rem] top-[80rem] blur-[8rem] mr-52 scale-[2.8] z-[11]"></div>
 
           {/* BLACK */}
           <div className="bg-black h-[20rem] absolute w-[12rem] aspect-square rounded-full -right-[20rem] top-[12rem] blur-[3rem] mr-52 scale-[3] z-[11]"></div>
