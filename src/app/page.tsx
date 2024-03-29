@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import Head from "next/head";
 import Navbar from "../components/LandingPage/Navbar/Navbar";
 import Header from "../components/LandingPage/Header";
