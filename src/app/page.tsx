@@ -19,10 +19,10 @@ export default function Home() {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
           rel="stylesheet"
-        />
+        /> */}
       </Head>
       <div className="bg-[#060606] overflow-hiddenw-screen flex flex-col items-center justify-center text-white text-base md:text-lg relative pt-20 overflow-x-hidden">
         <Navbar />
