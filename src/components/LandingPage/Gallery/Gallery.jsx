@@ -18,6 +18,7 @@ const Gallery = () => {
       }, 25);
     }
   };
+  // ed
   return (
     <>
       <div
