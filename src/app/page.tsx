@@ -5,6 +5,8 @@ import Features from "../components/LandingPage/Features/Features";
 import Quotes from "../components/LandingPage/Quotes";
 import Footer from "../components/LandingPage/Footer";
 import TechStack from "../components/LandingPage/TechStack/TechStack";
+import Projects from "../components/LandingPage/Projects/Projects";
+import Gallery from "../components/LandingPage/Gallery/Gallery";
 export default function Home() {
   return (
     <>
@@ -27,6 +29,10 @@ export default function Home() {
         <Header />
 
         <TechStack />
+
+        <Projects />
+
+        <Gallery />
 
         <Features />
 

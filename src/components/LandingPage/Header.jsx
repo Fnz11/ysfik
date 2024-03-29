@@ -49,9 +49,14 @@ const Header = () => {
         <div className="z-[3] flex flex-col items-center justify-center mb-32">
           <h1 className="drop-shadow-xl text-3xl md:text-8xl md:leading-[8rem] flex flex-col text-center font-[700]">
             <span className="">Empower Your Vision </span>
-            <span className="pb-3 bg-clip-text text-transparent  bg-gradient-to-r from-indigo-600  to-pink-600 ">
-              with <i>YSFIK</i>.
-            </span>
+            <div className="relative">
+              <span className="absolute blur-[1rem] opacity-[0.6] pb-3 bg-clip-text text-transparent z-[1] bg-gradient-to-r from-indigo-600  to-pink-600 ">
+                with <i>YSFIK</i>.
+              </span>
+              <span className="pb-3 z-[3] relative bg-clip-text text-transparent  bg-gradient-to-r from-indigo-600  to-pink-600 ">
+                with <i>YSFIK</i>.
+              </span>
+            </div>
           </h1>
           <p className="md:w-[55%] md:leading-[2.2rem] text-center mt-5 text-base md:text-xl font-semibold mb-20">
             Experience the power of transformation with our web development
