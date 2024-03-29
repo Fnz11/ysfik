@@ -34,7 +34,7 @@ const Gallery = () => {
             {/* BORDER */}
             <div className="bg-gradient-to-br from-indigo-700 via-transparent to-pink-700 opacity-[0.5] absolute w-full overflow-hidden h-full rounded-[1rem]">
               <div className="w-full h-full relative">
-                <div style={{left}} className={`z-[2] bg-white h-[10%] aspect-square absolute`}></div>
+                <div className={`z-[2] bg-white h-[10%] aspect-square absolute`}></div>
               </div>
             </div>
             <div className="bg-zinc-900 rounded-[1rem] flex flex-col inset-[1.5px] absolute z-[2]"></div>
