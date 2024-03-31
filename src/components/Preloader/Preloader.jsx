@@ -38,13 +38,13 @@ const Preloader = ({ setPreloader, show }) => {
     <>
       <section
         id="preloader"
-        className={`fixed z-[1000] w-full h-full flex items-center justify-center bg-[#111325]`}
+        className={`${!show && "pointer-events-none select-none cursor-default"} fixed z-[1000] w-full h-full flex items-center justify-center bg-[#111325]`}
       >
         <Image
           width={50000}
           height={50000}
           src="/BlackHoleBackground.png"
-          className="preloader-hole max-md:w-[150vw] max-md:h-[100vw] w-full h-full rotate-[-10deg] z-[-1] saturate-[0.5]  opacity-[0.7] contrast-[0.96] brightness-[0.81] absolute   object-cover scale-[1.1]  "
+          className=" preloader-hole max-md:w-[150vw] max-md:h-[100vw] w-full h-full rotate-[-10deg] z-[-1] saturate-[0.5]  opacity-[0.7] contrast-[0.96] brightness-[0.81] absolute   object-cover scale-[1.1]  "
           alt=""
         />
 

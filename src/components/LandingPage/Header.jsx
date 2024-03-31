@@ -11,6 +11,7 @@ import {
   setToAnimation,
 } from "../../utils/animations";
 import { useIntersection } from "react-use";
+import gsap from "gsap";
 const Header = ({ waitAnimation }) => {
   // INTERSECTION
   const sectionRef = useRef(null);
@@ -24,40 +25,24 @@ const Header = ({ waitAnimation }) => {
 
   // GSAP
   useGSAP(() => {
-    const { play: playLeft, restart: restartLeft } = floatingAnimation(
-      [".floating-left"],
-      {},
-      { x: 10 }
-    );
-    const { play: playRight, restart: restartRight } = floatingAnimation(
-      [".floating-right"],
-      {},
-      { x: -10 }
-    );
     if (!waitAnimation) {
       setTimeout(
         () => {
           if (intersection && intersection.intersectionRatio < 0.2) {
-            fadeOutAnimation([
-              ".heading",
-              ".text",
-              ".btn",
-              ".floating-left",
-              ".floating-right",
-            ]);
-            restartLeft();
-            restartRight();
+            fadeOutAnimation([".heading", ".text", ".btn"]);
           } else {
             fadeInAnimation([".heading", ".text", ".btn"]);
-            fadeInAnimation([".floating-left", ".floating-right"], {
-              opacity: 0.4,
-            });
-            setTimeout(() => {
-              playLeft();
-              playRight();
-            }, [2000]);
+            floatingAnimation(
+              [".floating-left"],
+              {},
+              { x: 10 }
+            );
+            floatingAnimation(
+              [".floating-right"],
+              {},
+              { x: -10 }
+            );
           }
-
           setisReadyAnimation(true);
         },
         !isReadyAnimation ? [2500] : [0]

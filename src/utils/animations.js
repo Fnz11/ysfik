@@ -1,30 +1,36 @@
 import gsap from "gsap";
 
 export const fadeInAnimation = (el, props) => {
-  gsap.fromTo(
-    [...el],
-    {
-      opacity: 0,
-      y: "15rem",
-    },
-    {
-      opacity: 1,
-      y: 0,
-      ease: "power3.inOut",
-      duration: 1.5,
-      stagger: 0.2,
-      ...props,
-    }
-  );
+  const firstAnimation = {
+    opacity: 0,
+    y: "15rem",
+    ease: "power3.inOut",
+    duration: 1.5,
+  };
+
+  const secondAnimation = {
+    opacity: 1,
+    y: 0,
+    ease: "power3.inOut",
+    duration: 1.5,
+    stagger: 0.2,
+    ...props,
+  };
+
+  const animation = gsap.fromTo([...el], firstAnimation, secondAnimation);
+
+  return { animation, firstAnimation, secondAnimation };
 };
 export const fadeOutAnimation = (el, props) => {
-  gsap.to([...el], {
+  const animation = gsap.to([...el], {
     opacity: 0,
     ease: "power3.inOut",
     duration: 0.2,
     stagger: 0.2,
     ...props,
   });
+
+  return animation;
 };
 export const floatingAnimation = (el, propsFrom, propsTo) => {
   const animation = gsap.fromTo(
@@ -122,7 +128,7 @@ export const preloaderCloseAnimation = (el) => {
   });
   tl.to([...el], {
     opacity: 0,
-    duration: 0.2,
+    duration: 0.5,
   });
   tl.to([...el], {
     css: { visibility: "hidden", display: "none" },
