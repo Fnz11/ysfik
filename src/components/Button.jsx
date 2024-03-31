@@ -1,10 +1,12 @@
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 const Button = ({ arrow, children, onClick, className, bordered }) => {
   return (
     <>
       <button
+        onMouseEnter={() => gsap.fromTo("#btn-light", {x: "0"}, {x: "17rem", duration: 0.5, ease: "circ.inOut"})}
         onClick={onClick}
         className={` ${className} ${
           bordered && "scale-[1.1]"
@@ -19,8 +21,12 @@ const Button = ({ arrow, children, onClick, className, bordered }) => {
             type="button"
             className={`text-white bg-gradient-to-r from-indigo-600  to-pink-600 group-hover:from-indigo-500 group-hover:to-pink-500  rounded-2xl ${
               bordered ? "px-12" : "px-10"
-            }  py-2.5 text-center m-[0.1rem] flex items-center justify-center gap-3 group-hover:scale-[1.02] transition-all ease-in-out duration-500 text-lg font-semibold shadow-lg group-hover:shadow-xl group-hover:shadow-[rgba(177,98,255,0.3)] shadow-[rgba(177,98,255,0.3)] drop-shadow-2xl before:h-[150%] before:w-[1rem] before:rotate-[20deg]  before:bg-white before:absolute relative overflow-hidden before:-left-10 before:group-hover:translate-x-[20rem] before:transition-all before:duration-500 before:ease-in-out before:blur-[0.9rem] before:invisible before:group-hover:visible`}
+            }  py-2.5 text-center m-[0.1rem] flex items-center justify-center gap-3 group-hover:scale-[1.02] transition-all ease-in-out duration-500 text-lg font-semibold shadow-lg group-hover:shadow-xl group-hover:shadow-[rgba(177,98,255,0.3)] shadow-[rgba(177,98,255,0.3)] relative overflow-hidden drop-shadow-2xl `}
           >
+            <div
+              id="btn-light"
+              className="h-[150%] w-[1rem] rotate-[20deg]  bg-white absolute  -left-10 blur-[0.9rem] invisible group-hover:visible"
+            ></div>
             <div className="absolute w-full h-full left-0 top-0 floating-element">
               <Image
                 width={500}

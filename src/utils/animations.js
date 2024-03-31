@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-export const fadeInAnimation = (el) => {
+export const fadeInAnimation = (el, props) => {
   gsap.fromTo(
     [...el],
     {
@@ -13,6 +13,7 @@ export const fadeInAnimation = (el) => {
       ease: "power3.inOut",
       duration: 1.5,
       stagger: 0.2,
+      ...props,
     }
   );
 };
@@ -26,13 +27,13 @@ export const fadeOutAnimation = (el, props) => {
   });
 };
 export const floatingAnimation = (el, propsFrom, propsTo) => {
-  gsap.fromTo(
+  const animation = gsap.fromTo(
     [...el],
     {
       opacity: 0.4,
       y: 0,
       x: 0,
-      ...propsFrom
+      ...propsFrom,
     },
     {
       opacity: 1,
@@ -42,11 +43,17 @@ export const floatingAnimation = (el, propsFrom, propsTo) => {
       yoyo: true,
       repeat: -1,
       duration: 7,
-      ...propsTo
+      ...propsTo,
     }
   );
-};
 
+  const play = () => animation.play();
+  const pause = () => animation.pause();
+  const restart = () => animation.restart();
+  animation.play();
+
+  return { play, pause, restart, animation };
+};
 export const panoramaAnimation = (el, dur, multiply = 1) => {
   const tl = gsap.timeline({
     repeat: -1,
@@ -99,7 +106,6 @@ export const panoramaAnimation = (el, dur, multiply = 1) => {
     ease: "expoScale(0.5,7,none)",
   });
 };
-
 export const preloaderCloseAnimation = (el) => {
   const tl = gsap.timeline();
   tl.to([...el], {
@@ -120,5 +126,11 @@ export const preloaderCloseAnimation = (el) => {
   });
   tl.to([...el], {
     css: { visibility: "hidden", display: "none" },
+  });
+};
+
+export const setToAnimation = (el, props) => {
+  gsap.to([...el], {
+    ...props,
   });
 };

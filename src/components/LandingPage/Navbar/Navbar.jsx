@@ -3,7 +3,29 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Button from "../../Button";
 import NavLink from "./Atom/NavLink";
-const Navbar = () => {
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+const Navbar = ({ waitAnimation }) => {
+  // APPEAR ANIMATION
+  useGSAP(() => {
+    if (!waitAnimation) {
+      setTimeout(() => {
+        gsap.fromTo(
+          "#navbar",
+          {
+            y: "-15vh",
+            ease: "back.inOut",
+          },
+          {
+            y: 0,
+            ease: "back.inOut",
+            duration: 3.5,
+          }
+        );
+      }, [1500]);
+    }
+  }, [waitAnimation]);
+
   // IS SCROLL DOWN
   const [isScrollDown, setIsScrollDown] = useState(false);
   const [isHiddenNav, setIsHiddenNav] = useState(false);
@@ -17,17 +39,17 @@ const Navbar = () => {
       } else {
         setIsScrollDown(false);
       }
-      if (window.scrollY <= 2500 || window.scrollY >= 3700) {
+      if (window.scrollY <= 2500 || window.scrollY >= 5800) {
         setIsClickedShow(false);
       }
 
-      if (window.scrollY >= 2500 && window.scrollY <= 3700 && !isClickedShow) {
+      if (window.scrollY >= 2500 && window.scrollY <= 5800 && !isClickedShow) {
         setIsHiddenNav(true);
       } else {
         setIsHiddenNav(false);
       }
 
-      console.log(isHiddenNav, isClickedShow);
+      console.log( window.scrollY);
     };
     window.addEventListener("scroll", onScroll);
     return () => {
@@ -65,7 +87,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed  w-full z-[10] top-0 left-0 `}>
+      <nav id="navbar" className={`fixed  w-full z-[10] top-0 left-0 `}>
         <div
           className={`flex z-[2] justify-between backdrop-blur-[3rem] h-full ${
             isHiddenNav && "translate-y-[-10rem] scale-[1.2]"

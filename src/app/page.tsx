@@ -34,7 +34,7 @@ export default function Home() {
 
       {!preloader && (
         <div className="bg-[#060606] overflow-hiddenw-screen flex flex-col items-center justify-center text-white text-base md:text-lg relative pt-20 overflow-x-hidden">
-          <Navbar />
+          <Navbar waitAnimation={preloader} />
 
           <Header waitAnimation={preloader} />
 

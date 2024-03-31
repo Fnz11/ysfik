@@ -8,6 +8,7 @@ import {
   fadeInAnimation,
   fadeOutAnimation,
   floatingAnimation,
+  setToAnimation,
 } from "../../utils/animations";
 import { useIntersection } from "react-use";
 const Header = ({ waitAnimation }) => {
@@ -23,6 +24,16 @@ const Header = ({ waitAnimation }) => {
 
   // GSAP
   useGSAP(() => {
+    const { play: playLeft, restart: restartLeft } = floatingAnimation(
+      [".floating-left"],
+      {},
+      { x: 10 }
+    );
+    const { play: playRight, restart: restartRight } = floatingAnimation(
+      [".floating-right"],
+      {},
+      { x: -10 }
+    );
     if (!waitAnimation) {
       setTimeout(
         () => {
@@ -34,18 +45,17 @@ const Header = ({ waitAnimation }) => {
               ".floating-left",
               ".floating-right",
             ]);
+            restartLeft();
+            restartRight();
           } else {
-            fadeInAnimation([
-              ".heading",
-              ".text",
-              ".btn",
-              ".floating-left",
-              ".floating-right",
-            ]);
+            fadeInAnimation([".heading", ".text", ".btn"]);
+            fadeInAnimation([".floating-left", ".floating-right"], {
+              opacity: 0.4,
+            });
             setTimeout(() => {
-              floatingAnimation([".floating-left"], {}, { x: 10 });
-              floatingAnimation([".floating-right"], {}, { x: -10 });
-            }, [1500]);
+              playLeft();
+              playRight();
+            }, [2000]);
           }
 
           setisReadyAnimation(true);
@@ -102,12 +112,12 @@ const Header = ({ waitAnimation }) => {
           <h1 className="drop-shadow-xl text-3xl md:text-8xl md:leading-[8rem] flex flex-col text-center font-[700]">
             <span className="heading opacity-0">Empower Your Vision </span>
             <div className="heading opacity-0 relative">
-              {/* <span className="absolute blur-[1rem] opacity-[0.6] pb-3 bg-clip- border-4 text-transparent z-[1] bg-gradient-to-r from-indigo-600  to-pink-600 ">
+              <span className="absolute blur-[1rem] opacity-[0.6] pb-3 bg-clip-text text-transparent z-[1] bg-gradient-to-r from-indigo-600  to-pink-600 ">
                 with <i>YSFIK</i>.
-              </span> */}
-              {/* <span className="pb-3 z-[3] relative bg-clip-text text-transparent  bg-gradient-to-r from-indigo-600  to-pink-600 ">
+              </span>
+              <span className="pb-3 z-[3] relative bg-clip-text text-transparent  bg-gradient-to-r from-indigo-600  to-pink-600 ">
                 with <i>YSFIK</i>.
-              </span> */}
+              </span>
             </div>
           </h1>
           <p className="text opacity-0 md:w-[55%] md:leading-[2.2rem] text-center mt-5 text-base md:text-xl font-semibold mb-20">
