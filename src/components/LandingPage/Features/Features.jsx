@@ -1,9 +1,38 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import Title from "../../Title";
 import FeatureSection from "./Organism/FeatureSection";
+import { useIntersection } from "react-use";
+import { useGSAP } from "@gsap/react";
+import { fadeInAnimation, fadeOutAnimation } from "@/utils/animations";
 
 const Features = () => {
+  // INTERSECTION
+  const sectionRef = useRef([null]);
+
+  // GSAP
+  useGSAP(() => {
+    sectionRef.current.map((item, index) => {
+      // const intersection = useIntersection(item, {
+      //   root: null,
+      //   rootMargin: "500px",
+      //   threshold: 0.2,
+      // });
+
+      // GSAP
+      // if (intersection && intersection.intersectionRatio < 0.2) {
+      // fadeOutAnimation([item]);
+      console.log(item, sectionRef);
+      // } else {
+      // fadeInAnimation([item]);
+      console.log(item, sectionRef);
+      // }
+    });
+  }, [sectionRef]);
+
+  // DATA
   const featuresData = [
     {
       title: "Crafted for",
@@ -56,7 +85,13 @@ const Features = () => {
         <div className="bg-pink-500 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[0] -right-[20rem] bottom-[20rem] blur-[10rem] mr-52 scale-[1.5]"></div>
 
         {/* TITLE */}
-        <Title color={"text-pink-500"} title={"Why Choose Us?"}>
+        <Title
+          ref={(ref) => (sectionRef[0].current = ref)}
+          className={"opacity-0"}
+          id="features-title"
+          color={"text-pink-500"}
+          title={"Why Choose Us?"}
+        >
           Discover Our Exceptional <br />
           Features.
         </Title>
@@ -64,7 +99,12 @@ const Features = () => {
         {/* CONTENT */}
         <div className="w-[80%] flex flex-col items-center justify-center mt-10 gap-20 md:gap-10">
           {featuresData.map((data, index) => (
-            <FeatureSection key={index} index={index} data={data} />
+            <FeatureSection
+              ref={(ref) => (sectionRef[index + 1].current = ref)}
+              key={index}
+              index={index}
+              data={data}
+            />
           ))}
         </div>
       </section>

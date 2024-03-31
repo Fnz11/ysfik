@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-const FeatureSection = ({ index, data }) => {
+const FeatureSection = ({ index, data, ref }) => {
   return (
     <div
       key={index}
+      ref={ref}
       className="flex max-md:flex-col mt-[-2.5rem] group w-full h-fit justify-between"
     >
       <div className="md:w-[46%] h-fit relative rounded-[1rem] bg-gradient-to-br from-indigo-700 via-transparent to-pink-700 aspect-square p-[0.2rem]">

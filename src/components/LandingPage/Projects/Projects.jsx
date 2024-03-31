@@ -2,9 +2,28 @@
 import Title from "@/components/Title";
 import ProjectSection from "./Organism/ProjectSection";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useIntersection } from "react-use";
+import { useGSAP } from "@gsap/react";
+import { fadeInAnimation, fadeOutAnimation } from "@/utils/animations";
 
 const Projects = () => {
+  // INTERSECTION
+  const sectionRef = useRef(null);
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "500px",
+    threshold: 0.2,
+  });
+
+  // GSAP
+  useGSAP(() => {
+    intersection && intersection.intersectionRatio < 0.2
+      ? fadeOutAnimation(["#project-title"])
+      : fadeInAnimation(["#project-title"]);
+  }, [intersection]);
+
+  // DATA
   const data = {
     title: "Crafted for",
     titleAccent: "Success",
@@ -15,10 +34,16 @@ const Projects = () => {
       "Our team takes the time to listen to your feedback, address your concerns, and incorporate your ideas into the project seamlessly. By fostering a collaborative environment, we're able to harness the collective wisdom of our team and yours, resulting in solutions that are not only technically sound but also aligned with your business objectives and values.",
   };
   const [projectNumberShow, setProjectNumberShow] = useState(1);
+
   return (
-    <div className="min-h-[50vh] w-[90%] my-[10rem] mx-auto ">
-      <Title title={"Projects Showcase"} color="text-purple-500">
-      Dive Into Our Projects <br /> Portfolio
+    <div ref={sectionRef} className="min-h-[50vh] w-[90%] my-[10rem] mx-auto ">
+      <Title
+        id="project-title"
+        title={"Projects Showcase"}
+        className={"opacity-0"}
+        color="text-purple-500"
+      >
+        Dive Into Our Projects <br /> Portfolio
       </Title>
 
       <div className="h-[100vh] mt-10 flex flex-col ">

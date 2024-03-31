@@ -1,12 +1,32 @@
+"use client";
+import { useGSAP } from "@gsap/react";
 import Title from "../../Title";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+import { useIntersection } from "react-use";
+import { fadeInAnimation, fadeOutAnimation } from "@/utils/animations";
 
 const TechStack = () => {
+  // INTERSECTION
+  const sectionRef = useRef(null);
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "500px",
+    threshold: 0.2,
+  });
+
+  // GSAP
+  useGSAP(() => {
+    intersection && intersection.intersectionRatio < 0.2
+      ? fadeOutAnimation(["#tech-title"])
+      : fadeInAnimation(["#tech-title"]);
+  }, [intersection]);
+
   return (
-    <div id="tech" className="my-[10rem]">
+    <div ref={sectionRef} id="tech" className="my-[10rem]">
       <Title
-        className=""
+        id="tech-title"
+        className="opacity-0"
         color="text-emerald-500"
         title="Unleash Your Potential"
       >
