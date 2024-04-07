@@ -108,7 +108,7 @@ const Header = ({ waitAnimation }) => {
           <p className="text opacity-0 md:w-[55%] md:leading-[2.2rem] text-center mt-5 text-base md:text-xl font-semibold mb-20">
             Experience the power of transformation with our web development
             solutions. More than{" "}
-            <b className="underline"> 88% have already realized their dreams</b>{" "}
+            <b className="underline opacity-[0.8]"> 88% have already realized their dreams</b>{" "}
             with us. Hello, I'm Fikri Nurdiansyah, but you can call me Ysfik. As
             a Fullstack Web Developer, I'm dedicated to turning visions into
             reality. Let's collaborate and unleash the full potential of your

@@ -1,5 +1,21 @@
 import gsap from "gsap";
 
+export const clickToStartAnimation = (el) => {
+  const tl = gsap.timeline();
+
+  tl.fromTo([...el], {
+    opacity: 0.6,
+    duration: 1.5,
+    ease: "power3.inOut",
+  }, {
+    opacity: 0.3,
+    duration: 1.5,
+    ease: "power3.inOut",
+    yoyo: true,
+    repeat: -1
+  });
+};
+
 export const fadeInAnimation = (el, props) => {
   const firstAnimation = {
     opacity: 0,
@@ -68,7 +84,7 @@ export const panoramaAnimation = (el, dur, multiply = 1) => {
   tl.to([...el], {
     x: 50 * multiply,
     y: 50 * multiply,
-    scale: 1.2,
+    scale: 1.4,
     rotate: "5deg",
     duration: dur,
     ease: "expoScale(0.5,7,none)",
@@ -76,9 +92,7 @@ export const panoramaAnimation = (el, dur, multiply = 1) => {
   tl.to([...el], {
     x: -50 * multiply,
     y: 50 * multiply,
-    x: -10,
-    y: -10,
-    scale: 1.15,
+    scale: 1.3,
     rotate: "0deg",
     duration: dur,
     ease: "expoScale(0.5,7,none)",
@@ -86,9 +100,7 @@ export const panoramaAnimation = (el, dur, multiply = 1) => {
   tl.to([...el], {
     x: -50 * multiply,
     y: -50 * multiply,
-    x: -10,
-    y: -10,
-    scale: 1.2,
+    scale: 1.4,
     rotate: "-5deg",
     duration: dur,
     ease: "expoScale(0.5,7,none)",
@@ -96,9 +108,7 @@ export const panoramaAnimation = (el, dur, multiply = 1) => {
   tl.to([...el], {
     x: 50 * multiply,
     y: -50 * multiply,
-    x: -10,
-    y: -10,
-    scale: 1.15,
+    scale: 1.3,
     rotate: "0deg",
     duration: dur,
     ease: "expoScale(0.5,7,none)",
@@ -106,12 +116,64 @@ export const panoramaAnimation = (el, dur, multiply = 1) => {
   tl.to([...el], {
     x: 50 * multiply,
     y: 50 * multiply,
-    scale: 1.2,
+    scale: 1.4,
     rotate: "5deg",
     duration: dur,
     ease: "expoScale(0.5,7,none)",
   });
 };
+
+export const starsAnimation = (el, dur, multiply = 1) => {
+  const tl = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+  });
+  tl.to([...el], {
+    x: 50 * multiply,
+    y: 50 * multiply,
+    rotate: (5 * multiply) / 2 + "deg",
+    duration: dur,
+    ease: "expoScale(0.5,7,none)",
+  });
+  tl.to([...el], {
+    x: -50 * multiply,
+    y: 50 * multiply,
+    rotate: (0 * multiply) / 2 + "deg",
+    duration: dur,
+    ease: "expoScale(0.5,7,none)",
+  });
+  tl.to([...el], {
+    x: -50 * multiply,
+    y: -50 * multiply,
+    rotate: (-5 * multiply) / 2 + "deg",
+    duration: dur,
+    ease: "expoScale(0.5,7,none)",
+  });
+  tl.to([...el], {
+    x: 50 * multiply,
+    y: -50 * multiply,
+    rotate: "0deg",
+    duration: dur,
+    ease: "expoScale(0.5,7,none)",
+  });
+  tl.to([...el], {
+    x: 50 * multiply,
+    y: 50 * multiply,
+    rotate: (5 * multiply) / 2 + "deg",
+    duration: dur,
+    ease: "expoScale(0.5,7,none)",
+  });
+};
+
+export const cameraStarsAnimation = (el, mouse, multiply = 1) => {
+  gsap.to([...el], {
+    x: mouse.x * -multiply,
+    y: mouse.y * multiply,
+    duration: 10,
+    ease: "expoScale(0.5,7,none)",
+  });
+};
+
 export const preloaderCloseAnimation = (el) => {
   const tl = gsap.timeline();
   tl.to([...el], {

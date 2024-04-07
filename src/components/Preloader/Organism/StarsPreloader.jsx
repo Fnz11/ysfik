@@ -1,30 +1,55 @@
 import Image from "next/image";
+import StarPreloader from "../Atom/StarPreloader";
 
 const StarsPreloader = () => {
   return (
-    <>
-      <Image
-        width={5000}
-        height={5000}
-        src="/Stars.png"
-        className="preloader-stars1  md:w-[80%]md: h-[80%] opacity-[0.9] brightness-[1.5] z-[1] absolute left-[-70%] top-0  object-cover"
-        alt=""
-      />
-      <Image
-        width={5000}
-        height={5000}
-        src="/Stars.png"
-        className="preloader-stars3  md:w-[50%] md:h-[50%] -bottom-[35vh] opacity-[0.9] brightness-[1.5] z-[1] absolute  object-cover"
-        alt=""
-      />
-      <Image
-        width={5000}
-        height={5000}
-        src="/Stars.png"
-        className="preloader-stars2  md:w-[80%] md:h-[80%] opacity-[0.9] brightness-[1.5] z-[1] absolute right-[-50%] top-0  object-cover"
-        alt=""
-      />
-    </>
+    <div className="pointer-events-none">
+      <div
+        className="absolute z-[2] h-full w-full"
+        id="preloader-container-stars1"
+      >
+        <StarPreloader
+          name="preloader-stars1"
+          left="20%"
+          top="0vh"
+          scale="1"
+        />
+        <StarPreloader
+          name="preloader-stars3"
+          left="80vw"
+          top="-80vh"
+          scale="0.5"
+        />
+      </div>
+      <div
+        className="absolute z-[2] h-full w-full"
+        id="preloader-container-stars2"
+      >
+        <StarPreloader
+          name="preloader-stars1"
+          left="-30%"
+          top="70vh"
+          scale="0.3"
+        />
+        <StarPreloader
+          name="preloader-stars2"
+          left="30vw"
+          top="45vh"
+          scale="0.8"
+        />
+      </div>
+      <div
+        className="absolute z-[2] h-full w-full"
+        id="preloader-container-stars3"
+      >
+        <StarPreloader
+          name="preloader-stars3"
+          left="-30vw"
+          top="0"
+          scale="0.4"
+        />
+      </div>
+    </div>
   );
 };
 
