@@ -9,8 +9,8 @@ import View from "./Organism/View";
 import { useEffect, useRef, useState } from "react";
 
 function Light() {
-  const ref = useRef();
-  useFrame((_) => (ref.current.rotation.x = _.clock.elapsedTime / 3));
+  const ref = useRef<any>();
+  useFrame((_) => (ref!.current!.rotation!.x! = _.clock.elapsedTime / 3));
   return (
     <group ref={ref}>
       <rectAreaLight
