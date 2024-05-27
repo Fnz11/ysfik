@@ -54,7 +54,7 @@ const Quotes = () => {
               </h1>
               <h4 className="font-bold uppercase">- Tom Bradley -</h4>
               <div className="mt-10">
-                <Button arrow bordered>
+                <Button onClick={() => {}} arrow bordered>
                   <a href="#features">Get In Touch</a>
                 </Button>
               </div>

@@ -5,22 +5,32 @@
   @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 }
 
-* {
-  ::-webkit-scrollbar {
-    width: 10px;
-    background: black;
-  }
-
-  ::-webkit-scrollbar-track {
-    bakcground: black;
-    position: fixed;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #D92776;
-    border-radius: 9999px;
-  }
+*::-webkit-scrollbar {
+  width: 10px;
+  background: black;
 }
+
+*::-webkit-scrollbar-track {
+  bakcground: black;
+  position: fixed;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d92776;
+  border-radius: 9999px;
+}
+
+*::selection {
+  background: #3cd97e; /* warna hijau emerald muda */
+  color: white; /* warna teks saat diseleksi, opsional */
+}
+
+/* Untuk browser Mozilla Firefox, gunakan ::-moz-selection */
+*::-moz-selection {
+  background: #3cd97e; /* warna hijau emerald muda */
+  color: white; /* warna teks saat diseleksi, opsional */
+}
+
 .floating-element {
   animation: floatAnimation 3s ease-in-out infinite;
 }

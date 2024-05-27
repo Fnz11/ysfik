@@ -15,7 +15,7 @@ import {
 } from "@/utils/animations";
 import View from "./Organism/View";
 
-const PreloaderView = ({ show }) => {
+const PreloaderView = ({ show }: { show: boolean }) => {
   let runStarsAnimation = false;
   useFrame(() => {
     if (!runStarsAnimation && show) {
@@ -27,10 +27,10 @@ const PreloaderView = ({ show }) => {
         opacity: 0.6,
       });
 
-      clickToStartAnimation(["#preloader-start"])
+      clickToStartAnimation(["#preloader-start"]);
       setTimeout(() => {
         runStarsAnimation = true;
-      }, [500]);
+      }, 500);
     }
   });
 

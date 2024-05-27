@@ -1,37 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-import Image from "next/image";
-import React, { useRef } from "react";
+import React from "react";
 import Title from "../../Title";
 import FeatureSection from "./Organism/FeatureSection";
-import { useIntersection } from "react-use";
-import { useGSAP } from "@gsap/react";
-import { fadeInAnimation, fadeOutAnimation } from "@/utils/animations";
+import { TracingBeam } from "@/components/UI/TracingBeam";
 
 const Features = () => {
-  // INTERSECTION
-  const sectionRef = useRef([null]);
-
-  // GSAP
-  useGSAP(() => {
-    sectionRef.current.map((item, index) => {
-      // const intersection = useIntersection(item, {
-      //   root: null,
-      //   rootMargin: "500px",
-      //   threshold: 0.2,
-      // });
-
-      // GSAP
-      // if (intersection && intersection.intersectionRatio < 0.2) {
-      // fadeOutAnimation([item]);
-      console.log(item, sectionRef);
-      // } else {
-      // fadeInAnimation([item]);
-      console.log(item, sectionRef);
-      // }
-    });
-  }, [sectionRef]);
-
   // DATA
   const featuresData = [
     {
@@ -73,21 +47,15 @@ const Features = () => {
   ];
 
   return (
-    <>
-      <section
-        id="features"
-        className="w-[95%] flex flex-col items-center mt-[10rem] md:mt-[20rem] min-h-screen relative"
-      >
+    <section id="features" className="w-screen ">
+      <TracingBeam className="flex flex-col items-center mt-[10rem] md:mt-[20rem]  min-h-screen relative">
         {/* LIGHT */}
         <div className="bg-blue-600 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[0] -right-32 top-[50rem] blur-[9rem] mr-52 scale-[1.5]"></div>
-        <div className="bg-indigo-500 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[0] ml-[40rem] top-[120rem] blur-[8rem] mr-52 scale-[1.5]"></div>
         <div className="bg-purple-700 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[0] left-40 top-[10rem] blur-[8rem] mr-52 scale-[1.5]"></div>
         <div className="bg-pink-500 h-[12rem] absolute w-[12rem] aspect-square rounded-full z-[0] -right-[20rem] bottom-[20rem] blur-[10rem] mr-52 scale-[1.5]"></div>
 
         {/* TITLE */}
         <Title
-          ref={(ref) => (sectionRef[0].current = ref)}
-          className={"opacity-0"}
           id="features-title"
           color={"text-pink-500"}
           title={"Why Choose Us?"}
@@ -97,18 +65,13 @@ const Features = () => {
         </Title>
 
         {/* CONTENT */}
-        <div className="w-[80%] flex flex-col items-center justify-center mt-10 gap-20 md:gap-10">
+        <div className="flex flex-col items-center justify-center mt-10 gap-20 md:gap-10 ">
           {featuresData.map((data, index) => (
-            <FeatureSection
-              ref={(ref) => (sectionRef[index + 1].current = ref)}
-              key={index}
-              index={index}
-              data={data}
-            />
+            <FeatureSection key={index} index={index} data={data} />
           ))}
         </div>
-      </section>
-    </>
+      </TracingBeam>
+    </section>
   );
 };
 

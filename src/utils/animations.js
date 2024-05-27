@@ -41,7 +41,7 @@ export const fadeOutAnimation = (el, props) => {
   const animation = gsap.to([...el], {
     opacity: 0,
     ease: "power3.inOut",
-    duration: 0.2,
+    duration: 1,
     stagger: 0.2,
     ...props,
   });
