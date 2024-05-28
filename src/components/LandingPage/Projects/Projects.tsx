@@ -8,8 +8,14 @@ const Projects = () => {
   // Data Dummy
   const data = [
     {
+      title: "START",
+      link: "#START",
+      image: "/START",
+      description: "START",
+    },
+    {
       title: "Rumah Atalla Cashier",
-      link: "#",
+      link: "https://rumahatalla.my.id",
       image: "/Success.png",
       description:
         "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
@@ -36,11 +42,10 @@ const Projects = () => {
         "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
     },
     {
-      title: "Rumah Atalla Cashier",
-      link: "#",
-      image: "/Success.png",
-      description:
-        "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
+      title: "END",
+      link: "#END",
+      image: "/END",
+      description: "END",
     },
   ];
 
@@ -48,7 +53,7 @@ const Projects = () => {
   const [projectNumberShow, setProjectNumberShow] = useState(2);
 
   return (
-    <div className="min-h-[50vh] w-[90%] my-[10rem] mx-auto relative ">
+    <section id="projects" className="min-h-[50vh] w-[87%] my-[10rem] mx-auto relative ">
       <Title
         id="project-title"
         title={"Projects Showcase"}
@@ -75,11 +80,11 @@ const Projects = () => {
         <div className="w-[92%] flex max-md:flex-col items-center justify-between -mt-36 md:mt-3 relative">
           <div className="w-full aspect-square absolute left-0 bg-gradient-to-r opacity-[0.6] from-[#9436b9] via-[#3c0271] to-[#3c0271] blur-[15vw] rounded-full  scale-y-[0.2] z-[-1]" />
           {/* LEFT */}
-          <div className="flex flex-col gap-2 md:w-[40%] max-md:text-center">
+          <div className="flex flex-col gap-2 md:w-[40%] mr-5 max-md:text-center">
             <h1 className="text-6xl font-bold text-white">
               Project #{projectNumberShow}
             </h1>
-            <div className="relative opacity-[0.9]">
+            <div className="relative opacity-[0.9] truncate">
               <h2 className="text-3xl absolute blur-[0.7rem] opacity-[0.3] font-bold  bg-clip-text text-transparent  bg-gradient-to-r from-indigo-600  to-pink-600">
                 {data[projectNumberShow].title}
               </h2>
@@ -94,7 +99,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

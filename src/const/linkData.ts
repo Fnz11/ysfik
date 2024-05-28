@@ -8,7 +8,7 @@ export const landingLinks = [
     text: "Tech",
   },
   {
-    link: "#project",
+    link: "#projects",
     text: "Project",
   },
   {

@@ -24,7 +24,7 @@ const ProjectSection = ({
 
   // Project Show Handler
   const handleNextShow = () => {
-    if (projectNumberShow < 3) {
+    if (projectNumberShow < data.length - 2) {
       setProjectNumberShow((prev: number) => prev + 1);
     } else {
       setProjectNumberShow(1);
@@ -34,14 +34,14 @@ const ProjectSection = ({
     if (projectNumberShow > 1) {
       setProjectNumberShow((prev: number) => prev - 1);
     } else {
-      setProjectNumberShow(3);
+      setProjectNumberShow(data.length - 2);
     }
   };
 
   //Handle Translate
   function getTranslateValue(number: number, isMobile: boolean) {
-    const baseTranslate = isMobile ? 20.1 : 6;
-    const increment = isMobile ? 20 : 19;
+    const baseTranslate = isMobile ? 21.1 : 4;
+    const increment = isMobile ? 20 : 16.65;
 
     return baseTranslate + (number - 1) * increment;
   }
@@ -90,7 +90,13 @@ const ProjectSection = ({
             >
               <div className=" absolute z-[5]">
                 <Link
-                  href={item.link}
+                  href={
+                    i == 0
+                      ? data[data.length - 2].link
+                      : i == data.length - 1
+                      ? data[1].link
+                      : item.link
+                  }
                   target="_blank"
                   className="px-0 flex items-center justify-center  border-2 border-slate-200 hover:border-white rounded-full group/button transition-all duration-300 hover:scale-[0.97] opacity-0 group-hover:opacity-[0.8] relative  bg-gradient-to-br from-[rgba(67,56,202,0.1)] to-[rgba(190,24,93,0.05)]"
                 >
@@ -110,7 +116,13 @@ const ProjectSection = ({
               <Image
                 width={500}
                 height={500}
-                src={item.image}
+                src={
+                  i == 0
+                    ? data[data.length - 2].image
+                    : i == data.length - 1
+                    ? data[1].image
+                    : item.image
+                }
                 className={`w-full h-full  absolute top-0 left-0 blur-[2rem] opacity-[0.5] transition-all duration-700 ease-in-out z-[0] aspect-square object-cover rounded-[1.8rem] `}
                 alt=""
               />
@@ -118,7 +130,13 @@ const ProjectSection = ({
                 <Image
                   width={500}
                   height={500}
-                  src={item.image}
+                  src={
+                    i == 0
+                      ? data[data.length - 2].image
+                      : i == data.length - 1
+                      ? data[1].image
+                      : item.image
+                  }
                   className="w-full z-[2] relative opacity-[0.8] transition-all duration-700 ease-in-out saturate-60 aspect-square object-cover "
                   alt=""
                 />
