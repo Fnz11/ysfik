@@ -72,7 +72,7 @@ const ProjectSection = ({
           {[0, 1, 2, 3, 4].map((i) => (
             <div
               key={i}
-              className={` md:w-[19%] relative border border-white rounded-[2.5rem] p-5 ${
+              className={` md:w-[19%] relative border shadow-2xl shadow-pink-950/50 border-white rounded-[2.5rem] p-5 ${
                 i - 1 == projectNumberShow &&
                 "max-md:opacity-0 md:scale-x-[0.8] md:skew-y-[10deg]  md:mt-[6rem]"
               } ${

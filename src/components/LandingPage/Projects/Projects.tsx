@@ -31,13 +31,13 @@ const Projects = () => {
       <div className="bg-[#3c0271] saturate-[1.5]  h-[30rem] absolute w-[32rem] aspect-square rounded-full z-[1] top-[20rem] blur-[6rem] right-[5rem] opacity-[0.3] scale-[3] pointer-events-none"></div>
       <div className="bg-[#3c0271] saturate-[1.5]  h-[30rem] absolute w-[32rem] aspect-square rounded-full z-[1] top-[20rem] blur-[6rem] right-[5rem] opacity-[0.6] scale-[1] pointer-events-none"></div>
 
-      <div className="h-[100vh] md:mt-10 flex flex-col z-[2] relative">
+      <div className="h-[100vh] w-full md:mt-10 flex flex-col items-center justify-center z-[2] relative">
         {/* PROJECT */}
-        <div className="h-full w-[95%] mt-[-10rem]">
+        <div className="h-full w-[92%] mt-[-10rem]">
           <ProjectSection data={data} />
         </div>
         {/* HEADER */}
-        <div className="flex max-md:flex-col items-center justify-between -mt-36 md:mt-3 relative">
+        <div className="w-[92%] flex max-md:flex-col items-center justify-between -mt-36 md:mt-3 relative">
           <div className="w-full aspect-square absolute left-0 bg-gradient-to-r opacity-[0.6] from-[#9436b9] via-[#3c0271] to-[#3c0271] blur-[15vw] rounded-full  scale-y-[0.2] z-[-1]" />
           {/* LEFT */}
           <div className="flex flex-col gap-2 md:w-[40%] max-md:text-center">

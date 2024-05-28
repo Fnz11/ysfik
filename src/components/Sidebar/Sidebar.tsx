@@ -1,5 +1,5 @@
 "use client";
-import { linkData } from "@/const/linkData";
+import { NavLinks, landingLinks } from "@/const/linkData";
 import Image from "next/image";
 import React from "react";
 import Button from "../Button";
@@ -8,9 +8,11 @@ import NavLink from "../LandingPage/Navbar/Atom/NavLink";
 const Sidebar = ({
   isShow,
   handleOpen,
+  isLanding = true,
 }: {
   isShow: boolean;
   handleOpen: () => void;
+  isLanding?: boolean;
 }) => {
   return (
     <>
@@ -91,21 +93,43 @@ const Sidebar = ({
 
             {/* Links */}
             <div className="z-[2] flex flex-col items-center font-semibold gap-10 ">
-              {linkData.map((item, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    handleOpen();
-                    if (typeof window !== "undefined") {
-                      window.location.href = item.link;
-                    }
-                  }}
-                >
-                  <span className="pointer-events-none">
-                    <NavLink>{item.text}</NavLink>
-                  </span>
-                </button>
-              ))}
+              {isLanding ? (
+                <>
+                  {landingLinks.map((item, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        handleOpen();
+                        if (typeof window !== "undefined") {
+                          window.location.href = item.link;
+                        }
+                      }}
+                    >
+                      <span className="pointer-events-none">
+                        <NavLink>{item.text}</NavLink>
+                      </span>
+                    </button>
+                  ))}
+                </>
+              ) : (
+                <>
+                  {NavLinks.map((item, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        handleOpen();
+                        if (typeof window !== "undefined") {
+                          window.location.href = item.link;
+                        }
+                      }}
+                    >
+                      <span className="pointer-events-none">
+                        <NavLink>{item.text}</NavLink>
+                      </span>
+                    </button>
+                  ))}
+                </>
+              )}
             </div>
 
             {/* Button */}

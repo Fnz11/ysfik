@@ -39,7 +39,7 @@ const Gallery = () => {
       <div
         onMouseMove={handleOnMouseMove}
         id="gallery-container"
-        className=" w-[100vw] bg-black/80 border border-white/10 group relative md:mt-[10rem] md:p-20"
+        className=" w-[100vw] bg-black/80 border border-white/10 group relative md:mt-[10rem] md:p-20 "
       >
         <div className="absolute z-[0] h-[20rem] aspect-square bg-purple-600 blur-[19rem] rounded-full scale-[1.4] bottom-[20%] right-[20%]"></div>
         <div className="absolute z-[0] h-[20rem] aspect-square bg-pink-700 blur-[19rem] rounded-full scale-[1.4] top-[20%] left-[20%]"></div>
@@ -83,23 +83,22 @@ const Gallery = () => {
             bg="bg-gradient-to-tr"
             targetRef={targetRef}
             i={2}
-            span="col-span-1 row-span-1 md:col-span-3 md:row-span-5 relative"
+            span="col-span-1 row-span-1 md:col-span-3 md:row-span-5 relative flex items-center justify-center text-center"
           >
-            <video
-              src="/Efficient.mp4"
-              autoPlay
-              muted
-              loop
-              className="w-full h-full object-cover absolute left-0 top-0 z-[1] rounded-xl "
+            <Image
+              src={"/Banner.png"}
+              alt="BG"
+              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.7]"
+              width={500}
+              height={500}
             />
             <div className="size-full relative flex flex-col justify-end p-5 z-[5]">
-              <h1 className="text-2xl md:text-[3vw] md:leading-[3.5vw] flex gap-3 font-bold z-[5]">
-                Streamline Your Operations
+              <h1 className="text-5xl md:text-[4vw] md:leading-[4.4vw] h-fit font-bold z-[5]">
+                Exactly what you
+                <ColorfulTextBG size="w-full h-[30%]">needed.</ColorfulTextBG>
               </h1>
-              <h1 className="text-base opacity-[0.7] mt-[0.5vw] h-fit z-[5]">
-                Implementing efficient processes that save you time and
-                resources, allowing your business to operate smoothly without
-                interruptions.
+              <h1 className="text-base opacity-[0.7] mt-3 md:mt-[0.5vw] h-fit z-[5]">
+                Transforming ideas into remarkable digital experiences.
               </h1>
             </div>
             <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
@@ -117,11 +116,11 @@ const Gallery = () => {
             }
           >
             <Image
-              src={"/BG4.png"}
+              src={"/Speed.png"}
               alt="BG"
-              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.05] contrast-[2] saturate-0"
-              width={500}
-              height={500}
+              className="size-full object-cover absolute left-0 top-0 opacity-[0.3]"
+              width={700}
+              height={700}
             />
             <h1 className="text-5xl md:text-[4.5vw] md:leading-[4.4vw] h-fit font-bold z-[5]">
               Exactly what you
@@ -152,7 +151,7 @@ const Gallery = () => {
             <Image
               alt="Logo"
               src="LogoSquare.svg"
-              className="w-full h-full rounded-[1rem] absolute"
+              className="w-full h-full object-cover rounded-[1rem] absolute"
               width={1000}
               height={1000}
             />

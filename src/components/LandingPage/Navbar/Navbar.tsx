@@ -6,11 +6,17 @@ import NavLink from "./Atom/NavLink";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Sidebar from "@/components/Sidebar/Sidebar";
-import { linkData, socialLinks } from "@/const/linkData";
+import { NavLinks, landingLinks, socialLinks } from "@/const/linkData";
 import { FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { MdOutlineEmail } from "react-icons/md";
-const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
+const Navbar = ({
+  waitAnimation,
+  isLanding = true,
+}: {
+  waitAnimation: boolean;
+  isLanding?: boolean;
+}) => {
   // APPEAR ANIMATION
   useGSAP(() => {
     if (!waitAnimation) {
@@ -109,11 +115,23 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
 
           {/* Links */}
           <div className="max-md:hidden z-[2] flex items-center justify-center font-semibold gap-10 ml-34">
-            {linkData.map((item, i) => (
-              <NavLink key={i} link={item.link}>
-                {item.text}
-              </NavLink>
-            ))}
+            {isLanding ? (
+              <>
+                {landingLinks.map((item, i) => (
+                  <NavLink key={i} link={item.link}>
+                    {item.text}
+                  </NavLink>
+                ))}
+              </>
+            ) : (
+              <>
+                {NavLinks.map((item, i) => (
+                  <NavLink key={i} link={item.link}>
+                    {item.text}
+                  </NavLink>
+                ))}
+              </>
+            )}
           </div>
 
           {/* Button */}
@@ -208,6 +226,7 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
       <Sidebar
         isShow={isOpenSidebar}
         handleOpen={() => setIsOpenSidebar((prev) => !prev)}
+        isLanding={isLanding}
       />
 
       {/* UP */}
@@ -243,7 +262,9 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
       {/* Socials */}
       <div className="fixed italic aspect-square bottom-8 left-8 z-[20] flex items-center justify-end flex-col gap-2 max-md:hidden">
         <div
-          className={`flex items-center justify-start mt-2 relative overflow-hidden ${!isHoverSocial ? "h-[14rem]" : "h-0"} w-5 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]`}
+          className={`flex items-center justify-start mt-2 relative overflow-hidden ${
+            !isHoverSocial ? "h-[14rem]" : "h-0"
+          } w-5 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]`}
         >
           <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
             MY SOCIALS
@@ -253,7 +274,11 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
           </span>
         </div>
         {/* Instagram */}
-        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
+        <div
+          onMouseEnter={() => setIsHoverSocial(true)}
+          onMouseLeave={() => setIsHoverSocial(false)}
+          className="group flex flex-col gap-2"
+        >
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[13rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               INSTAGRAM
@@ -275,7 +300,11 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
         </div>
 
         {/* Whatsapp */}
-        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
+        <div
+          onMouseEnter={() => setIsHoverSocial(true)}
+          onMouseLeave={() => setIsHoverSocial(false)}
+          className="group flex flex-col gap-2"
+        >
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[12rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               WHATSAPP
@@ -297,7 +326,11 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
         </div>
 
         {/* Email */}
-        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
+        <div
+          onMouseEnter={() => setIsHoverSocial(true)}
+          onMouseLeave={() => setIsHoverSocial(false)}
+          className="group flex flex-col gap-2"
+        >
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[7rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               EMAIL
@@ -320,7 +353,11 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
         </div>
 
         {/* Github */}
-        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
+        <div
+          onMouseEnter={() => setIsHoverSocial(true)}
+          onMouseLeave={() => setIsHoverSocial(false)}
+          className="group flex flex-col gap-2"
+        >
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[8.5rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               GITHUB

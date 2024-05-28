@@ -1,4 +1,4 @@
-export const linkData = [
+export const landingLinks = [
   {
     link: "#home",
     text: "Home",
@@ -18,6 +18,17 @@ export const linkData = [
   {
     link: "#contact",
     text: "Contact",
+  },
+];
+
+export const NavLinks = [
+  {
+    link: "/projects/evm",
+    text: "EVM",
+  },
+  {
+    link: "/projects/solana",
+    text: "Solana",
   },
 ];
 

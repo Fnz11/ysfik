@@ -10,7 +10,7 @@ const ColorfulTextBG = ({
   position?: string;
 }) => {
   return (
-    <span className=" w-fit h-fit relative">
+    <span className=" w-fit h-fit relative mx-3">
       <span className="z-[2] relative">{children}</span>
       <div
         className={`${size} ${position} absolute  bg-gradient-to-r from-[rgba(115,55,255,0.8)] to-[rgba(168,64,243,0.8)] saturate-[1.2] backdrop-blur-[0.3rem] border-b border-[rgba(255,84,169,0.06)] ${
