@@ -15,9 +15,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ContactMe from "@/components/LandingPage/ContactMe/ContactMe";
+import About from "@/components/LandingPage/AboutMe/About";
 
 export default function Home() {
-  const [preloader, setPreloader] = useState(true);
+  const [preloader, setPreloader] = useState(false);
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -40,7 +41,7 @@ export default function Home() {
         />
       </Head>
 
-      <Preloader setPreloader={setPreloader} show={preloader} />
+      {/* <Preloader setPreloader={setPreloader} show={preloader} /> */}
 
       <div
       // options={{
@@ -70,6 +71,8 @@ export default function Home() {
             <Navbar waitAnimation={preloader} />
 
             <Header waitAnimation={preloader} />
+
+            <About />
 
             <TechStack />
 

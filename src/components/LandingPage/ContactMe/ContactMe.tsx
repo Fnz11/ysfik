@@ -19,7 +19,7 @@ const ContactMe = () => {
           Let{"'"}s work together
         </Title>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-20 ">
-          <ScrollReveallComponent far={500} delay={200}>
+          <ScrollReveallComponent far={700} delay={200}>
             <Button
               onClick={() => window.open(socialLinks.whatsapp, "_blank")}
               bordered
@@ -32,7 +32,7 @@ const ContactMe = () => {
             </Button>
           </ScrollReveallComponent>
 
-          <ScrollReveallComponent far={500} delay={400}>
+          <ScrollReveallComponent far={700} delay={400}>
             <Button
               onClick={() => window.open(socialLinks.email, "_blank")}
               bordered
@@ -45,7 +45,7 @@ const ContactMe = () => {
             </Button>
           </ScrollReveallComponent>
 
-          <ScrollReveallComponent far={500} delay={600}>
+          <ScrollReveallComponent far={700} delay={600}>
             <Button
               onClick={() => window.open(socialLinks.github, "_blank")}
               bordered
@@ -58,7 +58,7 @@ const ContactMe = () => {
             </Button>
           </ScrollReveallComponent>
 
-          <ScrollReveallComponent far={500} delay={800}>
+          <ScrollReveallComponent far={700} delay={800}>
             <Button
               onClick={() => window.open(socialLinks.instagram, "_blank")}
               bordered

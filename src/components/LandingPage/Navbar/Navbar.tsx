@@ -69,6 +69,8 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
 
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
+  const [isHoverSocial, setIsHoverSocial] = useState(false);
+
   return (
     <>
       {/* NAVBAR */}
@@ -239,9 +241,19 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
       </div>
 
       {/* Socials */}
-      <div className="fixed italic aspect-square bottom-8 left-8 z-[20] flex items-start justify-end flex-col gap-2 max-md:hidden">
+      <div className="fixed italic aspect-square bottom-8 left-8 z-[20] flex items-center justify-end flex-col gap-2 max-md:hidden">
+        <div
+          className={`flex items-center justify-start mt-2 relative overflow-hidden ${!isHoverSocial ? "h-[14rem]" : "h-0"} w-5 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]`}
+        >
+          <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
+            MY SOCIALS
+          </span>
+          <span className="absolute blur-[0.2rem] opacity-[0.4] text-2xl tracking-[0.5rem] text-white/80">
+            MY SOCIALS
+          </span>
+        </div>
         {/* Instagram */}
-        <div className="group flex flex-col gap-2">
+        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[13rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               INSTAGRAM
@@ -261,9 +273,9 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
             </div>
           </Link>
         </div>
-        
+
         {/* Whatsapp */}
-        <div className="group flex flex-col gap-2">
+        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[12rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               WHATSAPP
@@ -285,7 +297,7 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
         </div>
 
         {/* Email */}
-        <div className="group flex flex-col gap-2">
+        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[7rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               EMAIL
@@ -308,7 +320,7 @@ const Navbar = ({ waitAnimation }: { waitAnimation: boolean }) => {
         </div>
 
         {/* Github */}
-        <div className="group flex flex-col gap-2">
+        <div onMouseEnter={() => setIsHoverSocial(true)} onMouseLeave={() => setIsHoverSocial(false)} className="group flex flex-col gap-2">
           <div className="flex items-center justify-start mt-2 relative overflow-hidden group-hover:h-[8.5rem] h-0 transition-all duration-500 ease-in-out pointer-events-none truncate [writing-mode:vertical-lr]">
             <span className="absolute z-2 text-2xl tracking-[0.5rem] text-white/60">
               GITHUB

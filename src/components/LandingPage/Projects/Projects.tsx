@@ -33,7 +33,7 @@ const Projects = () => {
 
       <div className="h-[100vh] md:mt-10 flex flex-col z-[2] relative">
         {/* PROJECT */}
-        <div className="h-full w-full mt-[-10rem]">
+        <div className="h-full w-[95%] mt-[-10rem]">
           <ProjectSection data={data} />
         </div>
         {/* HEADER */}

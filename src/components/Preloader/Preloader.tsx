@@ -60,13 +60,13 @@ const Preloader = ({
           id="preloader"
           onClick={handleClose}
           className={`${
-            !show && "pointer-events-none select-none cursor-default"
-          } fixed z-[1000] w-full h-full flex items-center justify-center bg-[#111325] `}
+            !show ? "pointer-events-none select-none cursor-default" : "cursor-pointer"
+          }  fixed z-[1000] w-full h-full flex items-center justify-center bg-[#111325] `}
         >
           {/* LOGO */}
           <div
             id="preloader-logo"
-            className="fixed flex items-center justify-center gap-1 font-bold text-lg leading-5 text-white top-10 opacity-[0] z-[1500]"
+            className=" fixed flex items-center justify-center gap-1 font-bold text-lg leading-5 text-white top-10 opacity-[0] z-[1500]"
           >
             <Image
               width={500}
@@ -81,7 +81,7 @@ const Preloader = ({
           {/* TEXT */}
           <div
             id="preloader-start"
-            className="fixed bottom-10 opacity-0 z-[1500]"
+            className={` ${!show && "translate-y-[10rem]"} fixed bottom-10 opacity-0 z-[1500]`}
           >
             <div className="  w-fit h-fit flex items-center  justify-center relative text-white text-lg mb-10">
               <h1 className="">Click To Start The Journey</h1>
