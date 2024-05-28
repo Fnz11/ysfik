@@ -74,8 +74,8 @@ const Gallery = () => {
                 increase sales.
               </h1>
             </div>
-            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.2] from-[20%] to-transparent rounded-xl" />
-            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-900/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-pink-900/[0.2] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 2 */}
@@ -88,7 +88,7 @@ const Gallery = () => {
             <Image
               src={"/Banner.png"}
               alt="BG"
-              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.7]"
+              className="w-full h-full object-cover absolute left-0 top-0 brightness-[0.5]"
               width={500}
               height={500}
             />
@@ -101,8 +101,8 @@ const Gallery = () => {
                 Transforming ideas into remarkable digital experiences.
               </h1>
             </div>
-            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
-            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-indigo-700/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-pink-900/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-indigo-900/[0.3] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 3 */}
@@ -112,7 +112,7 @@ const Gallery = () => {
             i={3}
             span="col-span-1 row-span-1 md:col-span-3 md:row-span-2"
             className={
-              "flex flex-col max-md:items-center justify-center max-md:text-center p-[1vw] "
+              "flex flex-col max-md:items-center justify-end max-md:text-center p-[1vw] "
             }
           >
             <Image
@@ -122,15 +122,14 @@ const Gallery = () => {
               width={700}
               height={700}
             />
-            <h1 className="text-5xl md:text-[4.5vw] md:leading-[4.4vw] h-fit font-bold z-[5]">
-              Exactly what you
-              <ColorfulTextBG size="w-full h-[30%]">needed.</ColorfulTextBG>
+            <h1 className="text-5xl md:text-[3vw] md:leading-[3vw] h-fit font-bold z-[5]">
+              Streamline Your Operations
             </h1>
             <h1 className="text-base opacity-[0.7] mt-3 md:mt-[0.5vw] h-fit z-[5]">
-              Transforming ideas into remarkable digital experiences.
+              Implementing efficient processes that save you time and resources.
             </h1>
-            <div className="h-full w-[70%] absolute top-0 left-0 z-[1] bg-gradient-to-r from-indigo-600/[0.2] from-[10%] to-transparent rounded-xl" />
-            <div className="h-full w-[70%] absolute bottom-0 right-0 z-[2] bg-gradient-to-l from-pink-600/[0.2] from-[10%] to-transparent rounded-xl" />
+            <div className="h-full w-[70%] absolute top-0 left-0 z-[1] bg-gradient-to-r from-indigo-900/[0.2] from-[10%] to-transparent rounded-xl" />
+            <div className="h-full w-[70%] absolute bottom-0 right-0 z-[2] bg-gradient-to-l from-pink-900/[0.2] from-[10%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 4 */}
@@ -181,8 +180,8 @@ const Gallery = () => {
                 innovation.
               </h1>
             </div>
-            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.2] from-[20%] to-transparent rounded-xl" />
-            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[2] bg-gradient-to-t from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-900/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[2] bg-gradient-to-t from-pink-900/[0.2] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 6 */}
@@ -196,38 +195,22 @@ const Gallery = () => {
             <Image
               src={"/BG5.png"}
               alt="BG"
-              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.5] contrast-[2] saturate-0 rounded-xl"
+              className="w-full h-full object-cover absolute left-0 top-0 brightness-[0.5] rounded-xl"
               width={500}
               height={500}
             />
 
-            <h1 className="text-3xl md:text-[3.3vw] md:leading-[4.4vw] h-fit font-bold z-[5]">
+            <h1 className="text-3xl md:text-[3.3vw] md:leading-[4.4vw] h-fit font-bold z-[5] mt-auto">
               <span className="mr-2">Get More</span>
               <ColorfulTextBG size="w-full h-[40%]" position="left-0 bottom-0">
                 Engage
               </ColorfulTextBG>
             </h1>
-            <h1 className="text-base md:text-[1vw] opacity-[0.7] h-fit z-[5]">
+            <h1 className="text-base md:text-[1vw] opacity-[0.7] h-fit z-[5] mb-5">
               With Our Web Product.
             </h1>
-            <div className="w-full h-full relative scale-[0.9] mt-[1rem] z-[3]">
-              <Image
-                src={"/GraphicUp.png"}
-                alt="Up"
-                className=" object-cover relative z-[12] contrast-[1.5] "
-                width={500}
-                height={500}
-              />
-              <Image
-                src={"/GraphicUp.png"}
-                alt="Up"
-                className=" object-cover absolute top-0 left-0 blur-[0.15rem]  contrast-[1.5] "
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-pink-600/[0.3] from-[20%] to-transparent rounded-xl" />
-            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-pink-900/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-900/[0.3] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 7 */}
@@ -254,8 +237,8 @@ const Gallery = () => {
                 quality.
               </h1>
             </div>
-            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.3] from-[20%] to-transparent rounded-xl" />
-            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[2] bg-gradient-to-t from-pink-600/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-900/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[2] bg-gradient-to-t from-pink-900/[0.3] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
         </div>
       </div>

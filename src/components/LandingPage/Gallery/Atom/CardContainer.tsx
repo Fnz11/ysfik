@@ -14,7 +14,7 @@ const CardContainer = ({
     <ScrollReveallComponent
       far={700}
       delay={i * 50}
-      className={` ${span} w-full h-full flex items-center justify-center brightness-[0.8] hover:brightness-100 transition-all duration-1000`}
+      className={` ${span} w-full h-full flex items-center justify-center brightness-[1] hover:brightness-[1.1] transition-all duration-1000`}
     >
       <div
         ref={(e) => (targetRef.current[i] = e)}
@@ -25,7 +25,7 @@ const CardContainer = ({
           style={{
             background: `radial-gradient(
         50rem circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-        rgba(150, 10, 255, 0.7),
+        rgba(100, 10, 255, 0.7),
         transparent 40%
       )`,
           }}
