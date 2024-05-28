@@ -66,14 +66,14 @@ const Sidebar = ({
           {/* Background */}
           <div
             onClick={handleOpen}
-            className={`bg-black/40 backdrop-blur-xl w-screen h-screen ${
+            className={`bg-black/60 backdrop-blur-xl w-screen h-screen ${
               !isShow && "translate-x-[100%]"
             } transition-all ease-in-out duration-[0.4s] absolute border-l border-white/10`}
           />
 
           {/* Content */}
           <div
-            className={`bg-black/90  w-[70%] h-screen ${
+            className={`bg-black/70  w-[70%] h-screen ${
               !isShow ? "translate-x-[-100%]" : ""
             } transition-all ease-in-out duration-[0.6s] z-[2] p-10 relative border-r border-white/10 flex flex-col justify-between items-center pb-[35vh]`}
           >

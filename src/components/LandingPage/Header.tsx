@@ -19,14 +19,23 @@ const Header = ({ waitAnimation }: { waitAnimation: boolean }) => {
     threshold: 0.2,
   });
 
+  // ==================== STATE ====================
+
+  // Is Ready Animation State
   const [isReadyAnimation, setisReadyAnimation] = useState(false);
+
+  // Is Reveall State
+  const [isReveall, setIsReveall] = useState(false);
+
+  // ==================== HANDLE ====================
 
   // GSAP
   useGSAP(() => {
-    if (!waitAnimation && intersection) {
+    if (!waitAnimation && !isReveall && intersection) {
       if (intersection.intersectionRatio < 0.2) {
         fadeOutAnimation([".heading", ".text", ".btn"]);
       }
+      setIsReveall(true);
       setTimeout(
         () => {
           if (intersection.intersectionRatio >= 0.2) {
@@ -97,10 +106,10 @@ const Header = ({ waitAnimation }: { waitAnimation: boolean }) => {
               </span>
             </div>
           </h1>
-          <p className="text opacity-0 md:w-[55%] md:leading-[2.2rem] text-center mt-5 text-base md:text-xl font-semibold mb-20 text-white/80">
+          <p className="text opacity-0 md:w-[55%] md:leading-[2.2rem] text-center mt-5 text-base md:text-xl font-semibold mb-20 text-white/70">
             Experience the power of transformation with our web development
             solutions. More than{" "}
-            <b className="underline opacity-[0.8]">
+            <b className="underline ">
               {" "}
               88% have already realized their dreams
             </b>{" "}

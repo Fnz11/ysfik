@@ -21,13 +21,11 @@ const Gallery = () => {
           targetRef.current[i].style.setProperty("--mouse-y", `${-200}vh`);
           setIsTouch(true);
         }
-        console.log(targetRef.current[i].getBoundingClientRect());
         const rect = targetRef.current[i].getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
         //   set delay
-        console.log(x, y);
         setTimeout(() => {
           targetRef.current[i].style.setProperty("--mouse-x", `${x}px`);
           targetRef.current[i].style.setProperty("--mouse-y", `${y}px`);
@@ -41,75 +39,43 @@ const Gallery = () => {
       <div
         onMouseMove={handleOnMouseMove}
         id="gallery-container"
-        className="h-[170vh] w-[100vw] group relative mt-[10rem] px-20"
+        className=" w-[100vw] bg-black/80 border border-white/10 group relative md:mt-[10rem] md:p-20"
       >
         <div className="absolute z-[0] h-[20rem] aspect-square bg-purple-600 blur-[19rem] rounded-full scale-[1.4] bottom-[20%] right-[20%]"></div>
         <div className="absolute z-[0] h-[20rem] aspect-square bg-pink-700 blur-[19rem] rounded-full scale-[1.4] top-[20%] left-[20%]"></div>
 
-        <div className="w-full h-[172vh] grid gap-5 z-6 relative grid-cols-8">
+        <div className="w-full h-[250vh]  md:h-[172vh] grid gap-5 z-6 relative grid-cols-1 md:grid-cols-8 p-5 md:p-10">
           {/* 1 */}
           <CardContainer
             bg="bg-gradient-to-br"
             targetRef={targetRef}
             i={1}
-            span="col-span-5 row-span-3"
+            span="col-span-1 row-span-1 md:col-span-5 md:row-span-3"
             className={
               "flex flex-col  justify-center items-center text-center p-[1vw] "
             }
           >
-            <Image
-              src={"/MoneyBG.png"}
-              alt="BG"
-              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.07] z-[2] contrast-[3]"
-              width={500}
-              height={500}
+            {/* video */}
+            <video
+              src="/ProfitIncrease.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover absolute left-0 top-0 z-[1] rounded-xl "
             />
-            <div className="h-[30%] w-[30%] floating-left absolute left-10 top-2 z-[3] contrast-[1.1] opacity-[0.7] group-hover:opacity-90 transition-all duration-500">
-              <div className="relative w-full h-full">
-                <Image
-                  src={"/Money.png"}
-                  alt="BG"
-                  className="  absolute z-[5]"
-                  width={500}
-                  height={500}
-                />
-                <Image
-                  src={"/Money.png"}
-                  alt="BG"
-                  className="blur-[1rem]  absolute z-[3] opacity-[0.8] group-hover:scale-[1.2] group-hover:blur-[4rem] transition-all duration-700"
-                  width={500}
-                  height={500}
-                />
-              </div>
+            <div className="size-full relative flex flex-col justify-end p-5 z-[5]">
+              <h1 className="text-2xl md:text-[4vw] md:leading-[4.5vw] flex gap-3 font-bold z-[5]">
+                Maximize
+                <ColorfulTextBG>Profit</ColorfulTextBG>
+                Potential
+              </h1>
+              <h1 className="text-base opacity-[0.7] mt-[0.5vw] h-fit z-[5]">
+                Elevate your online brand to attract higher-paying clients and
+                increase sales.
+              </h1>
             </div>
-            <div className="h-[32%] w-[32%] floating-left absolute right-[2rem] skew-x-12 rotate-[30deg] bottom-2 z-[3] contrast-[1.1] opacity-[0.7] group-hover:opacity-90 transition-all duration-500">
-              <div className="relative w-full h-full">
-                <Image
-                  src={"/Money.png"}
-                  alt="BG"
-                  className="  absolute z-[5]"
-                  width={500}
-                  height={500}
-                />
-                <Image
-                  src={"/Money.png"}
-                  alt="BG"
-                  className="blur-[1rem]  absolute z-[3] opacity-[0.8] group-hover:scale-[1.2] group-hover:blur-[4rem] transition-all duration-700"
-                  width={500}
-                  height={500}
-                />
-              </div>
-            </div>
-
-            <h1 className="text-[6vw] leading-[5.5vw] h-fit font-bold z-[5]">
-              Maximize
-              <ColorfulTextBG>Profit</ColorfulTextBG>
-              Potential
-            </h1>
-            <h1 className="text-base opacity-[0.7] mt-[0.5vw] h-fit z-[5]">
-              Elevate your online brand to attract higher-paying clients and
-              increase sales.
-            </h1>
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 2 */}
@@ -117,9 +83,27 @@ const Gallery = () => {
             bg="bg-gradient-to-tr"
             targetRef={targetRef}
             i={2}
-            span="col-span-3 row-span-5"
+            span="col-span-1 row-span-1 md:col-span-3 md:row-span-5 relative"
           >
-            2
+            <video
+              src="/Efficient.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover absolute left-0 top-0 z-[1] rounded-xl "
+            />
+            <div className="size-full relative flex flex-col justify-end p-5 z-[5]">
+              <h1 className="text-2xl md:text-[3vw] md:leading-[3.5vw] flex gap-3 font-bold z-[5]">
+                Streamline Your Operations
+              </h1>
+              <h1 className="text-base opacity-[0.7] mt-[0.5vw] h-fit z-[5]">
+                Implementing efficient processes that save you time and
+                resources, allowing your business to operate smoothly without
+                interruptions.
+              </h1>
+            </div>
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-indigo-700/[0.3] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 3 */}
@@ -127,8 +111,10 @@ const Gallery = () => {
             bg="bg-gradient-to-r"
             targetRef={targetRef}
             i={3}
-            span="col-span-3 row-span-2"
-            className={"flex flex-col  justify-center p-[1vw] "}
+            span="col-span-1 row-span-1 md:col-span-3 md:row-span-2"
+            className={
+              "flex flex-col max-md:items-center justify-center max-md:text-center p-[1vw] "
+            }
           >
             <Image
               src={"/BG4.png"}
@@ -137,19 +123,21 @@ const Gallery = () => {
               width={500}
               height={500}
             />
-            <h1 className="text-[4.5vw] leading-[4.4vw] h-fit font-bold z-[5]">
+            <h1 className="text-5xl md:text-[4.5vw] md:leading-[4.4vw] h-fit font-bold z-[5]">
               Exactly what you
               <ColorfulTextBG size="w-full h-[30%]">needed.</ColorfulTextBG>
             </h1>
-            <h1 className="text-base opacity-[0.7] mt-[0.5vw] h-fit z-[5]">
+            <h1 className="text-base opacity-[0.7] mt-3 md:mt-[0.5vw] h-fit z-[5]">
               Transforming ideas into remarkable digital experiences.
             </h1>
+            <div className="h-full w-[70%] absolute top-0 left-0 z-[1] bg-gradient-to-r from-indigo-600/[0.2] from-[10%] to-transparent rounded-xl" />
+            <div className="h-full w-[70%] absolute bottom-0 right-0 z-[2] bg-gradient-to-l from-pink-600/[0.2] from-[10%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 4 */}
           <div
             ref={(e) => (targetRef.current[4] = e)}
-            className="col-span-2 row-span-2 opacity-[0.7]  transition-all duration-1000 rounded-[1rem]  relative  "
+            className="col-span-1 row-span-1 md:col-span-2 md:row-span-2 opacity-[0.7]  transition-all duration-1000 rounded-[1rem]  relative  max-md:hidden"
           >
             <div
               className="border-inherit rounded-[1rem]  h-full w-full opacity-0 group-hover:opacity-100 duration-500 transition-all absolute left-0 top-0 z-[3] mix-blend-overlay"
@@ -174,9 +162,28 @@ const Gallery = () => {
           <CardContainer
             targetRef={targetRef}
             i={5}
-            span="col-span-3 row-span-3"
+            span="col-span-1 row-span-1 md:col-span-3 md:row-span-3 relative overflow-hidden flex flex-col  "
           >
-            4
+            {/* video */}
+            <video
+              src="/Blockchain1.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover absolute left-0 top-0 z-[1] rounded-xl "
+            />
+            <div className="size-full relative flex flex-col justify-end p-5 z-[5]">
+              <h1 className="text-2xl md:text-[2vw] md:leading-[3vw] h-fit font-bold z-[5] ">
+                Cutting-Edge Technology
+              </h1>
+              <h1 className="text-base to-white/80 mt-[0.5vw] h-fit z-[5]">
+                Stay ahead of the curve with the latest technology integrated
+                into your solutions, keeping your business at the forefront of
+                innovation.
+              </h1>
+            </div>
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.2] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[2] bg-gradient-to-t from-pink-600/[0.2] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 6 */}
@@ -184,27 +191,27 @@ const Gallery = () => {
             bg="bg-gradient-to-b"
             targetRef={targetRef}
             i={6}
-            span="col-span-3 row-span-3 "
-            className={"flex flex-col  items-center pt-[3vw] p-[1vw] "}
+            span="col-span-1 row-span-1 md:col-span-3 md:row-span-3 "
+            className={"flex flex-col  items-center pt-[3vw]  "}
           >
             <Image
               src={"/BG5.png"}
               alt="BG"
-              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.05] contrast-[2] saturate-0"
+              className="w-full h-full object-cover absolute left-0 top-0 opacity-[0.5] contrast-[2] saturate-0 rounded-xl"
               width={500}
               height={500}
             />
 
-            <h1 className="text-[3.3vw] leading-[4.4vw] h-fit font-bold z-[5]">
-              Get More
+            <h1 className="text-3xl md:text-[3.3vw] md:leading-[4.4vw] h-fit font-bold z-[5]">
+              <span className="mr-2">Get More</span>
               <ColorfulTextBG size="w-full h-[40%]" position="left-0 bottom-0">
                 Engage
               </ColorfulTextBG>
             </h1>
-            <h1 className="text-[1vw] opacity-[0.7] h-fit z-[5]">
+            <h1 className="text-base md:text-[1vw] opacity-[0.7] h-fit z-[5]">
               With Our Web Product.
             </h1>
-            <div className="w-full h-full relative scale-[0.9] mt-[1rem]">
+            <div className="w-full h-full relative scale-[0.9] mt-[1rem] z-[3]">
               <Image
                 src={"/GraphicUp.png"}
                 alt="Up"
@@ -215,11 +222,13 @@ const Gallery = () => {
               <Image
                 src={"/GraphicUp.png"}
                 alt="Up"
-                className=" object-cover absolute top-0 left-0 blur-[0.15rem] z-[10] contrast-[1.5] "
+                className=" object-cover absolute top-0 left-0 blur-[0.15rem]  contrast-[1.5] "
                 width={500}
                 height={500}
               />
             </div>
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[1] bg-gradient-to-t from-pink-600/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.3] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
 
           {/* 7 */}
@@ -227,9 +236,27 @@ const Gallery = () => {
             bg="bg-gradient-to-br"
             targetRef={targetRef}
             i={7}
-            span="col-span-2 row-span-3"
+            span="col-span-1 row-span-1 md:col-span-2 md:row-span-3 relative overflow-hidden flex flex-col  "
           >
-            3
+            {/* video */}
+            <video
+              src="/Fast.mp4"
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-cover absolute left-0 top-0 z-[1] rounded-xl "
+            />
+            <div className="size-full relative flex flex-col justify-end p-5 z-[5]">
+              <h1 className="text-2xl md:text-[2vw] md:leading-[2vw] h-fit font-bold z-[5] ">
+                Rapid Development
+              </h1>
+              <h1 className="text-base to-white/80 mt-[0.5vw] h-fit z-[5] text-justify">
+                Experience swift project delivery without compromising on
+                quality.
+              </h1>
+            </div>
+            <div className="h-[70%] w-full absolute top-0 left-0 z-[1] bg-gradient-to-b from-indigo-600/[0.3] from-[20%] to-transparent rounded-xl" />
+            <div className="h-[70%] w-full absolute bottom-0 left-0 z-[2] bg-gradient-to-t from-pink-600/[0.3] from-[20%] to-transparent rounded-xl" />
           </CardContainer>
         </div>
       </div>

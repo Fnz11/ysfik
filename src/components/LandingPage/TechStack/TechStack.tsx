@@ -1,24 +1,19 @@
 "use client";
-import { useGSAP } from "@gsap/react";
 import Title from "../../Title";
 import Image from "next/image";
-import React, { useRef } from "react";
-import { useIntersection } from "react-use";
-import { fadeInAnimation, fadeOutAnimation } from "@/utils/animations";
-import ScrollReveallComponent from "@/components/ScrollReveallComponent";
+import React from "react";
 
 const TechStack = () => {
-
   return (
     <div id="tech" className="my-[10rem]">
-        <Title
-          id="tech-title"
-          color="text-emerald-500"
-          title="Unleash Your Potential"
-        >
-          <div>With Our Advanced</div>
-          <div>Tech Stack.</div>
-        </Title>
+      <Title
+        id="tech-title"
+        color="text-emerald-500"
+        title="Unleash Your Potential"
+      >
+        <div>With Our Advanced</div>
+        <div>Tech Stack.</div>
+      </Title>
 
       <div className=" h-[60vh] md:min-h-[130vh] mt-[7rem] w-screen">
         <div className="flex items-center justify-center w-full relative opacity-[0.6] scale-y-[0.6]">

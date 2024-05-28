@@ -31,16 +31,16 @@ const Projects = () => {
       <div className="bg-[#3c0271] saturate-[1.5]  h-[30rem] absolute w-[32rem] aspect-square rounded-full z-[1] top-[20rem] blur-[6rem] right-[5rem] opacity-[0.3] scale-[3] pointer-events-none"></div>
       <div className="bg-[#3c0271] saturate-[1.5]  h-[30rem] absolute w-[32rem] aspect-square rounded-full z-[1] top-[20rem] blur-[6rem] right-[5rem] opacity-[0.6] scale-[1] pointer-events-none"></div>
 
-      <div className="h-[100vh] mt-10 flex flex-col z-[2] relative">
+      <div className="h-[100vh] md:mt-10 flex flex-col z-[2] relative">
         {/* PROJECT */}
         <div className="h-full w-full mt-[-10rem]">
           <ProjectSection data={data} />
         </div>
         {/* HEADER */}
-        <div className="flex items-center justify-between mt-3 relative">
+        <div className="flex max-md:flex-col items-center justify-between -mt-36 md:mt-3 relative">
           <div className="w-full aspect-square absolute left-0 bg-gradient-to-r opacity-[0.6] from-[#9436b9] via-[#3c0271] to-[#3c0271] blur-[15vw] rounded-full  scale-y-[0.2] z-[-1]" />
           {/* LEFT */}
-          <div className="flex flex-col gap-2 w-[40%]">
+          <div className="flex flex-col gap-2 md:w-[40%] max-md:text-center">
             <h1 className="text-6xl font-bold text-white">Project #1</h1>
             <div className="relative opacity-[0.9]">
               <h2 className="text-3xl absolute blur-[0.5rem] opacity-[0.5] font-bold  bg-clip-text text-transparent  bg-gradient-to-r from-indigo-600  to-pink-600">
@@ -52,7 +52,7 @@ const Projects = () => {
             </div>
           </div>
           {/* MIDDLE */}
-          <div className="flex items-end justify-end  w-full text-base">
+          <div className="flex items-end justify-end w-full text-base max-md:mt-3 max-md:text-justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
             numquam illo aliquid non laudantium dolorem, commodi laborum, veniam
             illum eaque maiores nam possimus expedita perspiciatis libero

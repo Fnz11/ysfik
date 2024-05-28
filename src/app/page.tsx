@@ -75,7 +75,7 @@ export default function Home() {
 
             <Projects />
 
-            {/* <Gallery /> */}
+            <Gallery />
 
             <Features />
 

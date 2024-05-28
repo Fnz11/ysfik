@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../Button";
+import ScrollReveallComponent from "../ScrollReveallComponent";
 
 const Quotes = () => {
   return (
@@ -32,6 +33,8 @@ const Quotes = () => {
               className="w-full object-cover group-hover:scale-[1.2] transition-all group-hover:-rotate-1 rotate-1 scale-[1.1] duration-1000 absolute h-[80vh] z-[2]"
               alt=""
             />
+
+            {/* Rocket */}
             <div className="absolute z-[3] translate-x-[-5rem] translate-y-[10rem] rotate-[-40deg] group-hover:rotate-0 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-[2000ms] top-[55%]  left-[20%] ">
               <div className="relative w-full h-full floating-element">
                 <Image
@@ -47,17 +50,26 @@ const Quotes = () => {
                 <div className="opacity-[0.2]  bg-gradient-to-bl from-purple-500  absolute left-[-7.5rem] top-[1rem] scale-[1.2]  blur-[1rem] to-transparent h-[10rem] w-[10rem]"></div>
               </div>
             </div>
+
             <div className="w-full h-full bg-[rgba(27,5,27,0.6)] backdrop-blur-md group-hover:backdrop-blur-0 transition-all duration-300 z-[2] absolute"></div>
+
+            {/* Text */}
             <div className="z-[4] w-[80%] mx-auto h-full flex flex-col items-center justify-center">
-              <h1 className="text-3xl md:text-7xl md:leading-[5rem] mb-10 font-bold drop-shadow-xl text-center">
-                {"Every accomplishment starts with the decision to try."}
-              </h1>
-              <h4 className="font-bold uppercase">- Tom Bradley -</h4>
-              <div className="mt-10">
-                <Button onClick={() => {}} arrow bordered>
-                  <a href="#features">Get In Touch</a>
-                </Button>
-              </div>
+              <ScrollReveallComponent>
+                <h1 className="text-3xl md:text-7xl md:leading-[5rem] mb-10 font-bold drop-shadow-xl text-center">
+                  {"Every accomplishment starts with the decision to try."}
+                </h1>
+              </ScrollReveallComponent>
+              <ScrollReveallComponent delay={100}>
+                <h4 className="font-bold uppercase">- Tom Bradley -</h4>
+              </ScrollReveallComponent>
+              <ScrollReveallComponent delay={200}>
+                <div className="mt-10">
+                  <Button onClick={() => {}} arrow bordered>
+                    <a href="#features">Get In Touch</a>
+                  </Button>
+                </div>
+              </ScrollReveallComponent>
             </div>
           </div>
         </div>
