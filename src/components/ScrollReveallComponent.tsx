@@ -33,7 +33,7 @@ const ScrollReveallComponent = ({
     }, delay);
   }, [intersection]);
   return (
-    <div ref={sectionRef} className={`${className}`}>
+    <div ref={sectionRef} className={`${className} opacity-0`}>
       {children}
     </div>
   );

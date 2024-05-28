@@ -150,7 +150,7 @@ const Gallery = () => {
             <Image
               alt="Logo"
               src="LogoSquare.svg"
-              className="w-full h-full z-[-1] blur-[3rem] scale-[1.7] opacity-[0.3] animate-pulse object-cover rounded-[1rem] absolute pointer-events-none"
+              className="w-full h-full z-[-1] blur-[3.5rem] scale-[1.5] opacity-[0.3] animate-pulse object-cover rounded-[1rem] absolute pointer-events-none"
               width={1000}
               height={1000}
             />
