@@ -14,7 +14,7 @@ const CardContainer = ({
     <ScrollReveallComponent
       far={700}
       delay={i * 50}
-      className={` ${span} w-full h-full flex items-center justify-center brightness-[1] hover:brightness-[1.1] transition-all duration-1000`}
+      className={` ${span} w-full h-full flex items-center justify-center brightness-[0.75] saturate-[0.8] hover:saturate-[1] hover:brightness-[1] transition-all duration-500`}
     >
       <div
         ref={(e) => (targetRef.current[i] = e)}

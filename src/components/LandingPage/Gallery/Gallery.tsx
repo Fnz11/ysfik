@@ -135,7 +135,7 @@ const Gallery = () => {
           {/* 4 */}
           <div
             ref={(e) => (targetRef.current[4] = e)}
-            className="col-span-1 row-span-1 md:col-span-2 md:row-span-2 opacity-[0.7]  transition-all duration-1000 rounded-[1rem]  relative  max-md:hidden"
+            className="col-span-1 row-span-1 md:col-span-2 md:row-span-2 opacity-[0.9]  transition-all duration-1000 rounded-[1rem]  relative  max-md:hidden"
           >
             <div
               className="border-inherit rounded-[1rem]  h-full w-full opacity-0 group-hover:opacity-100 duration-500 transition-all absolute left-0 top-0 z-[3] mix-blend-overlay"
@@ -150,7 +150,14 @@ const Gallery = () => {
             <Image
               alt="Logo"
               src="LogoSquare.svg"
-              className="w-full h-full object-cover rounded-[1rem] absolute"
+              className="w-full h-full z-[-1] blur-[3rem] scale-[1.7] opacity-[0.3] animate-pulse object-cover rounded-[1rem] absolute pointer-events-none"
+              width={1000}
+              height={1000}
+            />
+            <Image
+              alt="Logo"
+              src="LogoSquare.svg"
+              className="w-full h-full z-[10] object-cover rounded-[1rem] absolute"
               width={1000}
               height={1000}
             />
