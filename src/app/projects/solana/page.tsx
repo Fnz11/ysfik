@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useWallet } from "@solana/wallet-adapter-react";
 import bs58 from "bs58";
+import { AuroraBackground } from "@/components/UI/AuroraBackground";
 const CustomConnectButtonNoSSR = dynamic(
   () => import("../../../components/Projects/Solana/CustomConnectButton"),
   {
@@ -49,13 +50,17 @@ const Solana = () => {
           disconnect();
         });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [publicKey]);
 
   return (
-    <>
-      <CustomConnectButtonNoSSR />
-    </>
+    <div className="overflow-hidden mt-[-6%]">
+      <AuroraBackground className="overflow-hidden w-screen h-screen">
+        <div className="min-h-[50vh] w-[40%] p-5 bg-white/[0.01] border border-white/[0.05] rounded-3xl backdrop-blur-2xl flex items-center justify-center">
+          <CustomConnectButtonNoSSR />
+        </div>
+      </AuroraBackground>
+    </div>
   );
 };
 

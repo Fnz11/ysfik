@@ -90,18 +90,12 @@ const ProjectSection = ({
             >
               <div className=" absolute z-[5]">
                 <Link
-                  href={
-                    i == 0
-                      ? data[data.length - 2].link
-                      : i == data.length - 1
-                      ? data[1].link
-                      : item.link
-                  }
+                  href={item.link}
                   target="_blank"
-                  className="px-0 flex items-center justify-center  border-2 border-slate-200 hover:border-white rounded-full group/button transition-all duration-300 hover:scale-[0.97] opacity-0 group-hover:opacity-[0.8] relative  bg-gradient-to-br from-[rgba(67,56,202,0.1)] to-[rgba(190,24,93,0.05)]"
+                  className="px-0 flex items-center justify-center  border-2 border-slate-200 hover:border-white rounded-full group/button transition-all duration-300 hover:scale-[0.97] opacity-0 group-hover:opacity-[0.8] relative  bg-gradient-to-br from-[rgba(67,56,202,0.1)] to-[rgba(190,24,93,0.05)] backdrop-blur-xl"
                 >
                   <div className="h-full w-full rounded-full border-[0.2rem] absolute  group-hover/button:bg-[rgba(255,255,255,0.1)] transition-all duration-300 ease-in-out border-transparent group-hover/button:border-purple-700 blur-[0.4rem] opacity-[0.1] group-hover/button:opacity-80"></div>
-                  <div className="before:h-[120%] before:w-[2rem] before:bg-white before:opacity- before:absolute before:blur-[1.8rem] before:left-[-5rem] delay-75 before:hover:translate-x-[19rem] before:transition-all before:z-[10] before:duration-500 before:rotate-[20deg] relative overflow-hidden h-full w-full px-5 py-2 uppercase tracking-widest rounded-xl flex items-center justify-center gap-2">
+                  <div className="before:h-[120%] before:w-[2rem] before:bg-white before:opacity- before:absolute before:blur-[1.8rem] before:left-[-5rem] delay-75 before:hover:translate-x-[19rem] before:transition-all before:z-[10] before:duration-500 before:rotate-[20deg] relative overflow-hidden h-full w-full px-5 py-2 uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 ">
                     OPEN PROJECT
                     <Image
                       width={500}

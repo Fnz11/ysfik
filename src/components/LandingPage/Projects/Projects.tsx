@@ -16,28 +16,28 @@ const Projects = () => {
     {
       title: "Rumah Atalla Cashier",
       link: "https://rumahatalla.my.id",
-      image: "/Success.png",
+      image: "/RumahAtalla.png",
       description:
         "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
     },
     {
       title: "Affeto Studio.",
       link: "#",
-      image: "/Success.png",
+      image: "/ComingSoon.png",
       description:
         "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
     },
     {
       title: "Solana Token",
       link: "/projects/solana",
-      image: "/Success.png",
+      image: "/ComingSoon.png",
       description:
         "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
     },
     {
       title: "Smart Contract EVM",
       link: "/projects/evm",
-      image: "/Success.png",
+      image: "/ComingSoon.png",
       description:
         "At the heart of our process lies collaboration. We see our clients as partners in every sense, valuing open communication, mutual respect, and shared goals. Throughout the journey, from the initial brainstorming sessions to the final delivery, we work closely with you, ensuring that your vision is not only realized but enhanced through our collaboration.",
     },

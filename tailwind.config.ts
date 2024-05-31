@@ -4,7 +4,7 @@ const {
 import type { Config } from "tailwindcss";
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-const svgToDataUri = require("mini-svg-data-uri")
+const svgToDataUri = require("mini-svg-data-uri");
 
 const config: Config = {
   content: [
@@ -18,6 +18,19 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
+      keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
       },
     },
   },
@@ -55,7 +68,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });

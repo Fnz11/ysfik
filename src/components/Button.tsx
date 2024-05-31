@@ -11,6 +11,7 @@ const Button = ({
   className,
   bordered,
   square: isSquare,
+  color,
 }: {
   arrow?: boolean;
   children: React.ReactNode;
@@ -18,6 +19,7 @@ const Button = ({
   className?: string;
   bordered?: boolean;
   square?: string;
+  color?: string;
 }) => {
   return (
     <>
@@ -43,7 +45,7 @@ const Button = ({
           } group-hover:scale-[0.98] scale-[1.02] transition-all ease-in-out duration-700 rounded-3xl group-hover:border-[rgba(108,100,235,0.5)] border-[rgba(108,100,235,0.3)]`}
         >
           <div
-            className={`text-white bg-gradient-to-r from-indigo-600  to-pink-600 group-hover:from-indigo-500 group-hover:to-pink-500  rounded-2xl ${
+            className={`text-white  ${color || "bg-gradient-to-r from-indigo-600  to-pink-600 group-hover:from-indigo-500 group-hover:to-pink-500"}  rounded-2xl ${
               bordered ? "px-12" : "px-10"
             } ${isSquare} py-2.5 text-center m-[0.1rem] flex items-center justify-center gap-3 group-hover:scale-[1.02] transition-all ease-in-out duration-500 text-lg font-semibold shadow-lg group-hover:shadow-xl group-hover:shadow-[rgba(177,98,255,0.3)] shadow-[rgba(177,98,255,0.3)] relative overflow-hidden drop-shadow-2xl`}
           >

@@ -3,7 +3,7 @@ import { NavLinks, landingLinks } from "@/const/linkData";
 import Image from "next/image";
 import React from "react";
 import Button from "../Button";
-import NavLink from "../LandingPage/Navbar/Atom/NavLink";
+import NavLink from "../GlobalNavbar/Atom/NavLink";
 
 const Sidebar = ({
   isShow,

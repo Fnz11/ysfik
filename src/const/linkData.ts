@@ -23,6 +23,10 @@ export const landingLinks = [
 
 export const NavLinks = [
   {
+    link: "/",
+    text: "Landing",
+  },
+  {
     link: "/projects/evm",
     text: "EVM",
   },

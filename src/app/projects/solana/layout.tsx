@@ -8,7 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <SolanaProvider>{children}</SolanaProvider>
+      <SolanaProvider>
+        {children}
+      </SolanaProvider>
     </>
   );
 }
