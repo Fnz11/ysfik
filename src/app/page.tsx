@@ -18,7 +18,7 @@ import ContactMe from "@/components/LandingPage/ContactMe/ContactMe";
 import About from "@/components/LandingPage/AboutMe/About";
 
 export default function Home() {
-  const [preloader, setPreloader] = useState(false);
+  const [preloader, setPreloader] = useState(true);
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -41,7 +41,7 @@ export default function Home() {
         />
       </Head>
 
-      {/* <Preloader setPreloader={setPreloader} show={preloader} /> */}
+      <Preloader setPreloader={setPreloader} show={preloader} />
 
       <div
       // options={{
