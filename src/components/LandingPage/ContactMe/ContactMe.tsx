@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Title from "../../Title";
@@ -9,6 +10,7 @@ import { socialLinks } from "@/const/linkData";
 import ScrollReveallComponent from "@/components/ScrollReveallComponent";
 
 const ContactMe = () => {
+  if (typeof window === "undefined") return null;
   return (
     <>
       <section

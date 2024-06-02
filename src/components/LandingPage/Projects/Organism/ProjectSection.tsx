@@ -18,7 +18,7 @@ const ProjectSection = ({
   const [translateValue, setTranslateValue] = useState(5);
 
   // Is Mobile state
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth <= 768 : false);
 
   // ==================== HANDLE ====================
 
@@ -46,6 +46,7 @@ const ProjectSection = ({
     return baseTranslate + (number - 1) * increment;
   }
   useEffect(() => {
+    if (typeof window == "undefined") return;
     function handleResize() {
       setIsMobile(window.innerWidth <= 768);
     }
